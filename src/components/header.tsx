@@ -41,21 +41,21 @@ export default function Header() {
         hasScrolled || isMobile ? "text-foreground" : "text-white"
       );
 
-      const button = (
-        <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, isMobile ? "p-0" : "px-3 py-2")}>
-          {link.name}
-        </AnimatedButton>
-      );
-
       if (isMobile) {
         return (
           <SheetClose key={link.name} asChild>
-            {button}
+            <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, "p-0")}>
+              {link.name}
+            </AnimatedButton>
           </SheetClose>
         );
       }
       
-      return React.cloneElement(button, { key: link.name });
+      return (
+        <AnimatedButton key={link.name} href={link.href} variant="link" className={cn(linkClasses, "px-3 py-2")}>
+          {link.name}
+        </AnimatedButton>
+      );
     });
   };
 
