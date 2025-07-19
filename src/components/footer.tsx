@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AnimatedButton from "./animated-button";
 import Logo from "./logo";
 
 export default function Footer() {
@@ -22,11 +21,11 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><AnimatedButton href="/" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Home</AnimatedButton></li>
-                        <li><AnimatedButton href="/about" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">About Us</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Services</AnimatedButton></li>
-                        <li><AnimatedButton href="/projects" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Projects</AnimatedButton></li>
-                        <li><AnimatedButton href="/#contact" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Contact</AnimatedButton></li>
+                        <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                        <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Services</Link></li>
+                        <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
+                        <li><Link href="/#contact" className="hover:text-white transition-colors">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -34,12 +33,12 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Residential Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Commercial Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Industrial Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Strata Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Epoxy Flooring</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Special Finishes</AnimatedButton></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Residential Painting</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Commercial Painting</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Industrial Painting</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Strata Painting</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Epoxy Flooring</Link></li>
+                        <li><Link href="/#services" className="hover:text-white transition-colors">Special Finishes</Link></li>
                     </ul>
                 </div>
 
