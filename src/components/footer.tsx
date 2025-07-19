@@ -1,5 +1,12 @@
 import Link from "next/link";
 import Logo from "./logo";
+import { cn } from "@/lib/utils";
+
+const FooterLink = ({ href, children }: { href: string; children: React.ReactNode; }) => (
+    <Link href={href} className="transition-colors hover:text-white">
+        {children}
+    </Link>
+);
 
 export default function Footer() {
     
@@ -41,9 +48,9 @@ export default function Footer() {
                     <ul className="space-y-2 text-sm">
                        {navLinks.map((link) => (
                          <li key={link.name}>
-                           <Link href={link.href} className="transition-colors hover:text-white">
+                           <FooterLink href={link.href}>
                                {link.name}
-                           </Link>
+                           </FooterLink>
                          </li>
                        ))}
                     </ul>
@@ -55,9 +62,9 @@ export default function Footer() {
                     <ul className="space-y-2 text-sm">
                         {serviceLinks.map((link) => (
                            <li key={link.name}>
-                               <Link href={link.href} className="transition-colors hover:text-white">
+                               <FooterLink href={link.href}>
                                    {link.name}
-                               </Link>
+                               </FooterLink>
                            </li>
                         ))}
                     </ul>

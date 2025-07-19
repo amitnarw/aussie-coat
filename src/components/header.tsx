@@ -10,6 +10,7 @@ import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
 import AnimatedButton from "./animated-button";
 import Logo from "./logo";
+import NavLink from "./nav-link";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -37,28 +38,21 @@ export default function Header() {
     if (isMobile) {
       return navLinks.map((link) => (
         <SheetClose key={link.name} asChild>
-          <AnimatedButton href={link.href} variant="link" className={cn("text-lg text-foreground p-0")}>
+          <Link href={link.href} className={cn("text-lg text-foreground p-0 font-medium")}>
             {link.name}
-          </AnimatedButton>
+          </Link>
         </SheetClose>
       ));
     }
     
-    const linkClasses = cn(
-      "font-medium text-sm",
-      hasScrolled ? "text-foreground" : "text-white"
-    );
-
     return navLinks.map((link) => (
-      <AnimatedButton
+      <NavLink
         key={link.name}
         href={link.href}
-        variant="nav"
-        size="default"
-        className={cn(linkClasses)}
+        hasScrolled={hasScrolled}
       >
         {link.name}
-      </AnimatedButton>
+      </NavLink>
     ));
   };
 
@@ -79,9 +73,10 @@ export default function Header() {
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
-            <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
-                Contact Us
-            </AnimatedButton>
+            <Button asChild>
+                <Link href="/#contact">Contact Us</Link>
+            </Button>
+
             <ThemeToggle hasScrolled={hasScrolled} />
             <Sheet>
                 <SheetTrigger asChild>
