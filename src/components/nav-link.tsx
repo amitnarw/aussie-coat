@@ -23,7 +23,7 @@ export default function NavLink({ href, children, hasScrolled }: NavLinkProps) {
       <span className="relative inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
         {children}
       </span>
-      <span className="absolute left-1/2 top-full -translate-x-1/2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+      <span className="absolute inset-x-0 top-full -translate-x-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
         {children}
       </span>
     </Link>
