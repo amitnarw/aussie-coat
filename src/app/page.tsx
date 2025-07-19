@@ -37,53 +37,53 @@ const services = [
     icon: <Home className="h-10 w-10 text-primary" />,
     title: "Residential Painting",
     description: "High-quality interior and exterior painting services to make your house feel like a home.",
-    imgSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "modern living room"
   },
   {
     icon: <Building2 className="h-10 w-10 text-primary" />,
     title: "Commercial Painting",
     description: "Professional painting for offices, retail stores, and other business environments.",
-    imgSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "office interior"
   },
   {
     icon: <Factory className="h-10 w-10 text-primary" />,
     title: "Industrial Painting",
     description: "Durable painting solutions for warehouses, factories, and industrial facilities.",
-    imgSrc: "https://images.unsplash.com/photo-1580983215684-24786d3ade65?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "factory interior"
   },
   {
     icon: <Building className="h-10 w-10 text-primary" />,
     title: "Strata Painting",
     description: "Reliable and efficient painting services for multi-residential properties and body corporates.",
-    imgSrc: "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "apartment building"
   },
   {
     icon: <Palette className="h-10 w-10 text-primary" />,
     title: "Epoxy Flooring",
     description: "Hard-wearing, seamless flooring for garages, showrooms, and commercial spaces.",
-    imgSrc: "https://images.unsplash.com/photo-1633519398090-03a08b335832?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "epoxy garage floor"
   },
   {
     icon: <Layers className="h-10 w-10 text-primary" />,
     title: "Special Finishes",
     description: "Transform your space with unique, high-end decorative paint finishes.",
-    imgSrc: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/600x400.png",
     hint: "textured wall"
   },
 ];
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1558882224-285d85c4233d?q=80&w=1770&auto=format&fit=crop", hint: "painted interior" },
-  { src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1770&auto=format&fit=crop", hint: "house exterior" },
-  { src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1770&auto=format&fit=crop", hint: "commercial building" },
-  { src: "https://images.unsplash.com/photo-1600585152225-3579fe9d090b?q=80&w=1770&auto=format&fit=crop", hint: "kitchen cabinets" },
-  { src: "https://images.unsplash.com/photo-1595526114035-0d45ed16da31?q=80&w=1674&auto=format&fit=crop", hint: "bedroom wall" },
-  { src: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1770&auto=format&fit=crop", hint: "office space" },
+  { src: "https://placehold.co/600x400.png", hint: "painted interior" },
+  { src: "https://placehold.co/600x400.png", hint: "house exterior" },
+  { src: "https://placehold.co/600x400.png", hint: "commercial building" },
+  { src: "https://placehold.co/600x400.png", hint: "kitchen cabinets" },
+  { src: "https://placehold.co/600x400.png", hint: "bedroom wall" },
+  { src: "https://placehold.co/600x400.png", hint: "office space" },
 ];
 
 const whyChooseUs = [
@@ -114,12 +114,12 @@ const processSteps = [
 ]
 
 const partners = [
-    { name: "Partner One", logo: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1770&auto=format&fit=crop" },
-    { name: "Partner Two", logo: "https://images.unsplash.com/photo-1560250056-07ba64695294?q=80&w=1770&auto=format&fit=crop" },
-    { name: "Partner Three", logo: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1770&auto=format&fit=crop" },
-    { name: "Partner Four", logo: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1770&auto=format&fit=crop" },
-    { name: "Partner Five", logo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop" },
-    { name: "Partner Six", logo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1770&auto=format&fit=crop" },
+    { name: "Partner One", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Two", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Three", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Four", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Five", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Six", logo: "https://placehold.co/150x60.png" },
 ]
 
 
@@ -131,7 +131,7 @@ export default function HomePage() {
         <section id="hero" className="relative w-full h-[90vh] min-h-[700px] flex items-center">
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent z-10" />
           <Image
-            src="https://images.unsplash.com/photo-1621999933938-01d51939169a?q=80&w=1770&auto=format&fit=crop"
+            src="https://placehold.co/1920x1080.png"
             alt="Modern kitchen being painted"
             fill
             className="object-cover z-0"
@@ -179,7 +179,7 @@ export default function HomePage() {
                   </div>
                    <div>
                     <Image
-                      src="https://images.unsplash.com/photo-1512412817269-a86f53a79f32?q=80&w=1887&auto=format&fit=crop"
+                      src="https://placehold.co/600x700.png"
                       alt="Painter applying paint with a roller"
                       width={600}
                       height={700}

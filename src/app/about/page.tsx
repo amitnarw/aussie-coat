@@ -10,25 +10,25 @@ const teamMembers = [
   {
     name: "John Smith",
     role: "Founder & Lead Painter",
-    imgSrc: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1771&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/400x400.png",
     hint: "male portrait"
   },
   {
     name: "Jane Doe",
     role: "Project Manager",
-    imgSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/400x400.png",
     hint: "female portrait"
   },
   {
     name: "Peter Jones",
     role: "Senior Painter",
-    imgSrc: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1770&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/400x400.png",
     hint: "man portrait"
   },
     {
     name: "Emily White",
     role: "Customer Relations",
-    imgSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop",
+    imgSrc: "https://placehold.co/400x400.png",
     hint: "woman portrait"
   },
 ];
@@ -60,7 +60,7 @@ export default function AboutPage() {
             <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
                  <Image
-                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1770&auto=format&fit=crop"
+                    src="https://placehold.co/1770x885.png"
                     alt="Team of painters working together"
                     fill
                     className="object-cover z-0"
@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   <Image
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop"
+                    src="https://placehold.co/600x700.png"
                     alt="Aussie Coat founder"
                     width={600}
                     height={700}
@@ -132,7 +132,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                         <Image
-                            src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1770&auto=format&fit=crop"
+                            src="https://placehold.co/600x500.png"
                             alt="Painter looking over a city"
                             width={600}
                             height={500}

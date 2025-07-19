@@ -8,28 +8,28 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const projects = {
   residential: [
-    { src: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1854&auto=format&fit=crop", hint: "modern house exterior" },
-    { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1770&auto=format&fit=crop", hint: "cozy living room" },
-    { src: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=1887&auto=format&fit=crop", hint: "elegant dining room" },
-    { src: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=1770&auto=format&fit=crop", hint: "spacious kitchen" },
-    { src: "https://images.unsplash.com/photo-1595526114035-0d45ed16da31?q=80&w=1674&auto=format&fit=crop", hint: "serene bedroom" },
-    { src: "https://images.unsplash.com/photo-1583845112126-20a96d24d6b9?q=80&w=1887&auto=format&fit=crop", hint: "luxury bathroom" },
+    { src: "https://placehold.co/600x400.png", hint: "modern house exterior" },
+    { src: "https://placehold.co/600x400.png", hint: "cozy living room" },
+    { src: "https://placehold.co/600x400.png", hint: "elegant dining room" },
+    { src: "https://placehold.co/600x400.png", hint: "spacious kitchen" },
+    { src: "https://placehold.co/600x400.png", hint: "serene bedroom" },
+    { src: "https://placehold.co/600x400.png", hint: "luxury bathroom" },
   ],
   commercial: [
-    { src: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1770&auto=format&fit=crop", hint: "modern office lobby" },
-    { src: "https://images.unsplash.com/photo-1556740772-1a741367b93e?q=80&w=1770&auto=format&fit=crop", hint: "retail store interior" },
-    { src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop", hint: "restaurant interior design" },
-    { src: "https://images.unsplash.com/photo-1582211539230-a2938cb9958c?q=80&w=1770&auto=format&fit=crop", hint: "corporate building exterior" },
-    { src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1740&auto=format&fit=crop", hint: "cafe interior" },
-    { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1770&auto=format&fit=crop", hint: "hotel reception" },
+    { src: "https://placehold.co/600x400.png", hint: "modern office lobby" },
+    { src: "https://placehold.co/600x400.png", hint: "retail store interior" },
+    { src: "https://placehold.co/600x400.png", hint: "restaurant interior design" },
+    { src: "https://placehold.co/600x400.png", hint: "corporate building exterior" },
+    { src: "https://placehold.co/600x400.png", hint: "cafe interior" },
+    { src: "https://placehold.co/600x400.png", hint: "hotel reception" },
   ],
   industrial: [
-    { src: "https://images.unsplash.com/photo-1580983215684-24786d3ade65?q=80&w=1770&auto=format&fit=crop", hint: "warehouse interior" },
-    { src: "https://images.unsplash.com/photo-1621999933938-01d51939169a?q=80&w=1770&auto=format&fit=crop", hint: "factory floor painting" },
-    { src: "https://images.unsplash.com/photo-1562305221-34d616496383?q=80&w=1770&auto=format&fit=crop", hint: "industrial machinery" },
-    { src: "https://images.unsplash.com/photo-1587083437035-23c74258953f?q=80&w=1804&auto=format&fit=crop", hint: "storage facility" },
-    { src: "https://images.unsplash.com/photo-1479664797149-3c7d6797a73e?q=80&w=1770&auto=format&fit=crop", hint: "industrial plant exterior" },
-    { src: "https://images.unsplash.com/photo-1616886825748-8178828b43d3?q=80&w=1770&auto=format&fit=crop", hint: "workshop interior" },
+    { src: "https://placehold.co/600x400.png", hint: "warehouse interior" },
+    { src: "https://placehold.co/600x400.png", hint: "factory floor painting" },
+    { src: "https://placehold.co/600x400.png", hint: "industrial machinery" },
+    { src: "https://placehold.co/600x400.png", hint: "storage facility" },
+    { src: "https://placehold.co/600x400.png", hint: "industrial plant exterior" },
+    { src: "https://placehold.co/600x400.png", hint: "workshop interior" },
   ]
 };
 
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
           <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop"
+              src="https://placehold.co/1770x885.png"
               alt="Collection of project images"
               fill
               className="object-cover z-0"
