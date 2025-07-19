@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  Paintbrush,
   Home,
   Building2,
   CheckCircle2,
@@ -17,7 +16,6 @@ import {
   ArrowRight
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -32,6 +30,7 @@ import Visualizer from "@/components/visualizer";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { AnimatedSection } from "@/components/animated-section";
+import AnimatedButton from "@/components/animated-button";
 
 const services = [
   {
@@ -149,12 +148,8 @@ export default function HomePage() {
                     Aussie Coat delivers premium painting services with unparalleled quality and craftsmanship for homes and businesses across Australia.
                   </p>
                   <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                    <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 shadow-lg transition-transform hover:scale-105">
-                      <a href="#contact">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5"/></a>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-transform hover:scale-105 backdrop-blur-sm bg-white/10">
-                      <a href="#services">Our Services</a>
-                    </Button>
+                    <AnimatedButton href="#contact" variant="primary" size="lg">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5"/></AnimatedButton>
+                    <AnimatedButton href="#services" variant="secondary" size="lg">Our Services</AnimatedButton>
                   </div>
                 </div>
               </AnimatedSection>
@@ -211,12 +206,14 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {services.map((service) => (
-                    <Card key={service.title} className="bg-card overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <Card key={service.title} className="bg-card overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                        <Image src={service.imgSrc} alt={service.title} width={600} height={400} className="w-full object-cover h-56 transition-transform duration-300 group-hover:scale-105" data-ai-hint={service.hint}/>
                       <CardContent className="p-6">
                         <h3 className="text-xl font-bold font-headline">{service.title}</h3>
                         <p className="mt-2 text-muted-foreground">{service.description}</p>
-                         <Button variant="link" className="p-0 mt-4 text-primary h-auto hover:no-underline group/link">Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1"/></Button>
+                         <AnimatedButton href="#" variant="link" className="p-0 mt-4 text-primary h-auto group/link">
+                           Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1"/>
+                         </AnimatedButton>
                       </CardContent>
                     </Card>
                   ))}
@@ -237,7 +234,7 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {processSteps.map((step) => (
-                  <Card key={step.number} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                  <Card key={step.number} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col hover:-translate-y-2">
                     <CardHeader>
                       <CardTitle className="flex items-baseline gap-4">
                         <span className="text-4xl font-bold text-primary">{step.number}</span>
@@ -287,7 +284,7 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {galleryImages.map((image, index) => (
-                    <div key={index} className="overflow-hidden rounded-lg shadow-lg group">
+                    <div key={index} className="overflow-hidden rounded-lg shadow-lg group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                       <Image
                         src={image.src}
                         alt={`Project gallery image ${index + 1}`}
@@ -385,9 +382,9 @@ export default function HomePage() {
                         <Label htmlFor="message">Message</Label>
                         <Textarea id="message" placeholder="Tell us about your project..." rows={4} className="bg-background"/>
                       </div>
-                      <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg shadow-lg hover:shadow-xl transition-shadow">
+                       <AnimatedButton type="submit" variant="accent" size="lg" className="w-full">
                         Send Enquiry
-                      </Button>
+                      </AnimatedButton>
                     </form>
                   </div>
                 </div>

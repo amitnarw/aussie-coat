@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
+import AnimatedButton from "./animated-button";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -32,28 +33,24 @@ export default function Header() {
   }, []);
 
   const renderNavLinks = (isMobile: boolean = false) => navLinks.map((link) => {
+    const linkClasses = cn(
+        "font-medium transition-colors hover:text-primary",
+        isMobile ? "text-lg text-foreground" : "text-sm",
+        !isMobile && !hasScrolled && "text-white"
+    );
+
     if (isMobile) {
       return (
         <SheetClose key={link.name} asChild>
-          <Link href={link.href} className={cn(
-              "font-medium transition-colors hover:text-primary", 
-              "text-lg",
-              "text-foreground"
-          )}>
-              {link.name}
-          </Link>
+           <AnimatedButton href={link.href} variant="link" className={linkClasses}>{link.name}</AnimatedButton>
         </SheetClose>
       )
     }
 
     return (
-       <Link key={link.name} href={link.href} className={cn(
-            "font-medium transition-colors hover:text-primary", 
-            "text-sm",
-            hasScrolled ? "text-foreground" : "text-white"
-        )}>
-            {link.name}
-        </Link>
+       <AnimatedButton key={link.name} href={link.href} variant="link" className={linkClasses}>
+         {link.name}
+       </AnimatedButton>
     )
   });
 
@@ -70,13 +67,13 @@ export default function Header() {
             Aussie Coat
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-1">
             {renderNavLinks()}
         </nav>
         <div className="flex items-center gap-2">
-             <Button asChild className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/#contact">Get a Free Quote</Link>
-            </Button>
+             <AnimatedButton href="/#contact" variant="primary" className="hidden sm:inline-flex">
+              Get a Free Quote
+            </AnimatedButton>
             <ThemeToggle />
             <Sheet>
                 <SheetTrigger asChild>
@@ -101,9 +98,9 @@ export default function Header() {
                         {renderNavLinks(true)}
                     </nav>
                      <div className="mt-auto p-4 border-t border-border">
-                        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                            <Link href="/#contact">Get a Free Quote</Link>
-                        </Button>
+                        <AnimatedButton href="/#contact" variant="primary" className="w-full">
+                          Get a Free Quote
+                        </AnimatedButton>
                     </div>
                 </SheetContent>
             </Sheet>

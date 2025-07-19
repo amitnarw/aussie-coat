@@ -7,7 +7,7 @@ import { z } from "zod";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import AnimatedButton from "@/components/animated-button";
 import {
   Form,
   FormControl,
@@ -82,10 +82,10 @@ export default function Visualizer() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                {isPending ? "Generating..." : "Generate Ideas"}
+              <AnimatedButton type="submit" disabled={isPending} variant="accent" size="lg" className="w-full">
+                 {isPending ? "Generating..." : "Generate Ideas"}
                 {!isPending && <Sparkles className="ml-2 h-5 w-5" />}
-              </Button>
+              </AnimatedButton>
             </form>
           </Form>
         </CardContent>

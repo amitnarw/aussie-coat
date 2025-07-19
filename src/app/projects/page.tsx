@@ -36,7 +36,7 @@ const ProjectGallery = ({ images }: { images: { src: string, hint: string }[] })
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {images.map((image, index) => (
       <AnimatedSection key={index}>
-        <Card className="overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300">
+        <Card className="overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
           <CardContent className="p-0">
             <Image
               src={image.src}
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
             <div className="container mx-auto px-4 md:px-6">
               <Tabs defaultValue="residential" className="w-full">
                 <div className="flex justify-center mb-12">
-                    <TabsList className="bg-secondary p-2 rounded-md">
+                    <TabsList className="bg-secondary p-2">
                         <TabsTrigger value="residential" className="px-6 py-2">Residential</TabsTrigger>
                         <TabsTrigger value="commercial" className="px-6 py-2">Commercial</TabsTrigger>
                         <TabsTrigger value="industrial" className="px-6 py-2">Industrial</TabsTrigger>

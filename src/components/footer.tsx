@@ -1,5 +1,6 @@
 import { PaintRoller } from "lucide-react";
 import Link from "next/link";
+import AnimatedButton from "./animated-button";
 
 export default function Footer() {
     return (
@@ -8,10 +9,10 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Logo and About */}
                 <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
-                     <a href="#" className="flex items-center gap-2">
+                     <Link href="/" className="flex items-center gap-2">
                         <PaintRoller className="h-8 w-8 text-primary" />
                         <span className="text-2xl font-bold text-white font-headline">Aussie Coat</span>
-                    </a>
+                    </Link>
                     <p className="text-sm text-muted-foreground">
                        Delivering premium painting services with unparalleled quality and craftsmanship.
                     </p>
@@ -21,10 +22,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
-                        <li><Link href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link></li>
-                        <li><Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link></li>
-                        <li><Link href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+                        <li><AnimatedButton href="/about" variant="link" className="p-0 h-auto">About Us</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto">Services</AnimatedButton></li>
+                        <li><AnimatedButton href="/projects" variant="link" className="p-0 h-auto">Projects</AnimatedButton></li>
+                        <li><AnimatedButton href="/#contact" variant="link" className="p-0 h-auto">Contact</AnimatedButton></li>
                     </ul>
                 </div>
 
@@ -32,10 +33,10 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Residential</a></li>
-                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Commercial</a></li>
-                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Industrial</a></li>
-                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Epoxy Flooring</a></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto">Residential</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto">Commercial</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto">Industrial</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto">Epoxy Flooring</AnimatedButton></li>
                     </ul>
                 </div>
 
