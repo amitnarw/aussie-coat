@@ -32,18 +32,28 @@ export default function Header() {
   }, []);
 
   const renderNavLinks = (isMobile: boolean = false) => navLinks.map((link) => {
-    const Component = isMobile ? SheetClose : 'a';
-    const props = isMobile ? { asChild: true } : { href: link.href };
+    if (isMobile) {
+      return (
+        <SheetClose key={link.name} asChild>
+          <Link href={link.href} className={cn(
+              "font-medium transition-colors hover:text-primary", 
+              "text-lg",
+              "text-foreground"
+          )}>
+              {link.name}
+          </Link>
+        </SheetClose>
+      )
+    }
+
     return (
-      <Component key={link.name} {...props}>
-        <Link href={link.href} className={cn(
+       <Link key={link.name} href={link.href} className={cn(
             "font-medium transition-colors hover:text-primary", 
-            isMobile ? "text-lg" : "text-sm",
-            hasScrolled || isMobile ? "text-foreground" : "text-white"
+            "text-sm",
+            hasScrolled ? "text-foreground" : "text-white"
         )}>
             {link.name}
         </Link>
-      </Component>
     )
   });
 
