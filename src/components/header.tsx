@@ -69,7 +69,7 @@ export default function Header() {
             Aussie Coat
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-2">
+        <nav className="hidden lg:flex items-center gap-6">
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
