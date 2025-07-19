@@ -58,7 +58,7 @@ export default function AboutPage() {
       <main className="flex-1">
         <AnimatedSection>
             <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent z-10" />
                  <Image
                     src="https://placehold.co/1770x885.png"
                     alt="Team of painters working together"
@@ -115,14 +115,14 @@ export default function AboutPage() {
                         <div className="w-24 h-1.5 bg-primary"></div>
                         <div className="space-y-8">
                             <div className="flex gap-4">
-                                <Target className="h-12 w-12 text-primary flex-shrink-0 mt-1"/>
+                                <Target className="h-12 w-12 text-primary shrink-0 mt-1"/>
                                 <div>
                                     <h3 className="text-xl font-semibold font-headline">Our Mission</h3>
                                     <p className="text-muted-foreground mt-2">To provide outstanding painting services through superior craftsmanship, attention to detail, and unparalleled customer service, creating beautiful and lasting finishes that enhance our clients' properties.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
-                                <Eye className="h-12 w-12 text-primary flex-shrink-0 mt-1"/>
+                                <Eye className="h-12 w-12 text-primary shrink-0 mt-1"/>
                                 <div>
                                     <h3 className="text-xl font-semibold font-headline">Our Vision</h3>
                                     <p className="text-muted-foreground mt-2">To be Australia's leading painting contractor, renowned for our commitment to quality, innovation, and sustainability, while fostering a culture of respect and growth for our team and community.</p>

@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       <main className="flex-1">
         <AnimatedSection>
           <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
               src="https://placehold.co/1770x885.png"
               alt="Collection of project images"

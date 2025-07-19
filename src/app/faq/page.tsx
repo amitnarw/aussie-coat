@@ -55,7 +55,7 @@ export default function FAQPage() {
       <main className="flex-1">
         <AnimatedSection>
           <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
               src="https://placehold.co/1770x1062.png"
               alt="Painter answering a question"
