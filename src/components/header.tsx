@@ -40,9 +40,9 @@ export default function Header() {
         isMobile ? "text-lg" : "text-sm",
         hasScrolled || isMobile ? "text-foreground" : "text-white"
       );
-      
+
       const button = (
-        <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, isMobile ? "p-0" : "px-4 py-2")}>
+        <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, isMobile ? "p-0" : "px-3 py-2")}>
           {link.name}
         </AnimatedButton>
       );
@@ -72,7 +72,7 @@ export default function Header() {
             Aussie Coat
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-2">
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
