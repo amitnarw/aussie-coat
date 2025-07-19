@@ -4,24 +4,22 @@ import {
   Home,
   Building2,
   CheckCircle2,
-  Star,
-  ShieldCheck,
-  Mail,
   Phone,
-  MapPin,
-  Brush,
+  Mail,
+  Award,
+  Users,
+  Smile,
   Palette,
   Hammer,
   Building,
+  Factory,
+  Layers
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -34,187 +32,212 @@ const services = [
   {
     icon: <Home className="h-10 w-10 text-primary" />,
     title: "Residential Painting",
-    description: "Expert interior and exterior services to bring new life to your home.",
+    description: "High-quality interior and exterior painting services to make your house feel like a home.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "modern living room"
   },
   {
     icon: <Building2 className="h-10 w-10 text-primary" />,
     title: "Commercial Painting",
-    description: "Professional solutions for offices, retail spaces, and commercial properties.",
+    description: "Professional painting for offices, retail stores, and other business environments.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "office interior"
   },
   {
-    icon: <Brush className="h-10 w-10 text-primary" />,
-    title: "Roof Painting",
-    description: "Protect and enhance your roof with our durable, high-quality paint coatings.",
+    icon: <Factory className="h-10 w-10 text-primary" />,
+    title: "Industrial Painting",
+    description: "Durable painting solutions for warehouses, factories, and industrial facilities.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "factory interior"
   },
   {
     icon: <Building className="h-10 w-10 text-primary" />,
     title: "Strata Painting",
-    description: "Reliable and efficient painting services for multi-residential properties.",
+    description: "Reliable and efficient painting services for multi-residential properties and body corporates.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "apartment building"
   },
   {
     icon: <Palette className="h-10 w-10 text-primary" />,
     title: "Epoxy Flooring",
-    description: "Hard-wearing and seamless flooring solutions perfect for garages and commercial areas.",
+    description: "Hard-wearing, seamless flooring for garages, showrooms, and commercial spaces.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "epoxy garage floor"
   },
   {
-    icon: <Hammer className="h-10 w-10 text-primary" />,
-    title: "Plastering & Repairs",
-    description: "Perfecting your walls and ceilings before we even start painting.",
+    icon: <Layers className="h-10 w-10 text-primary" />,
+    title: "Special Finishes",
+    description: "Transform your space with unique, high-end decorative paint finishes.",
+    imgSrc: "https://placehold.co/600x400",
+    hint: "textured wall"
   },
 ];
 
 const galleryImages = [
-  { src: "https://placehold.co/600x400", hint: "living room" },
+  { src: "https://placehold.co/600x400", hint: "painted interior" },
   { src: "https://placehold.co/600x400", hint: "house exterior" },
-  { src: "https://placehold.co/600x400", hint: "modern office" },
-  { src: "https://placehold.co/600x400", hint: "painted kitchen" },
-  { src: "https://placehold.co/600x400", hint: "bedroom interior" },
-  { src: "https://placehold.co/600x400", hint: "retail space" },
+  { src: "https://placehold.co/600x400", hint: "commercial building" },
+  { src: "https://placehold.co/600x400", hint: "kitchen cabinets" },
+  { src: "https://placehold.co/600x400", hint: "bedroom wall" },
+  { src: "https://placehold.co/600x400", hint: "office space" },
 ];
 
 const whyChooseUs = [
-  {
-    title: "Expertise & Experience",
-    description: "With over 15 years in the industry, our skilled team delivers exceptional results on every project, no matter the size or complexity.",
-  },
-  {
-    title: "Quality Materials",
-    description: "We use only premium, eco-friendly paints and materials from trusted brands to ensure a durable and long-lasting finish.",
-  },
-  {
-    title: "Customer Satisfaction",
-    description: "Your satisfaction is our priority. We work closely with you to understand your vision and ensure we exceed your expectations.",
-  },
+    {
+      icon: <Award className="h-8 w-8 text-primary" />,
+      title: "10+ Years Experience",
+      description: "Our decade of experience ensures your project is in capable hands.",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-primary" />,
+      title: "Skilled Team",
+      description: "Our team of skilled painters are committed to delivering the best results.",
+    },
+    {
+      icon: <Smile className="h-8 w-8 text-primary" />,
+      title: "Customer Satisfaction",
+      description: "We work with you to ensure your complete satisfaction with the final result.",
+    },
 ];
+
+const processSteps = [
+    { number: "01", title: "Initial Consultation", description: "We start with a detailed consultation to understand your vision and requirements." },
+    { number: "02", title: "Color & Material Selection", description: "We help you choose the perfect colors and materials for a lasting finish." },
+    { number: "03", title: "Surface Preparation", description: "Thorough preparation is key to a flawless result. We ensure all surfaces are ready for painting." },
+    { number: "04", title: "Professional Painting", description: "Our expert team applies the paint with precision and attention to detail." },
+    { number: "05", title: "Cleaning & Inspection", description: "We clean up the site and conduct a final inspection to ensure our high standards are met." },
+    { number: "06", title: "Project Handover", description: "We walk you through the finished project to guarantee your complete satisfaction." },
+]
 
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section id="hero" className="relative w-full h-[80vh] min-h-[600px] flex items-center">
-          <div className="absolute inset-0 bg-black/50 z-10" />
+        <section id="hero" className="relative w-full h-[90vh] min-h-[700px] flex items-center">
+          <div className="absolute inset-0 bg-black/60 z-10" />
           <Image
             src="https://placehold.co/1920x1080"
-            alt="Modern house exterior"
+            alt="Modern kitchen being painted"
             layout="fill"
             objectFit="cover"
             className="z-0"
-            data-ai-hint="modern house exterior"
+            data-ai-hint="painter kitchen"
+            priority
           />
-          <div className="container mx-auto px-4 md:px-6 z-20 text-white text-center">
-            <div className="flex flex-col items-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-                Australia's Choice for Premier Painting Services
+          <div className="container mx-auto px-4 md:px-6 z-20">
+            <div className="max-w-3xl text-left">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Excellence in Every Brushstroke
               </h1>
-              <p className="mt-4 max-w-[700px] text-lg md:text-xl text-gray-200">
-                Delivering Flawless Finishes for Residential & Commercial Properties
+              <p className="mt-6 max-w-2xl text-lg md:text-xl text-gray-300">
+                Aussie Coat delivers premium painting services with unparalleled quality and craftsmanship for homes and businesses across Australia.
               </p>
-              <div className="mt-8 flex flex-col gap-4 min-[400px]:flex-row justify-center">
-                <Button asChild size="lg" variant="secondary" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">
+                  <a href="#contact">Get a Free Quote</a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <a href="#services">Our Services</a>
                 </Button>
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <a href="#contact">Request a Quote</a>
-                </Button>
-              </div>
-              <div className="mt-12 grid grid-cols-3 gap-6 text-center max-w-2xl w-full">
-                <div className="flex flex-col items-center gap-2">
-                  <CheckCircle2 className="h-8 w-8 text-accent" />
-                  <span className="font-semibold">15+ Years of Experience</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Star className="h-8 w-8 text-accent" />
-                  <span className="font-semibold">5-Star Rated</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <ShieldCheck className="h-8 w-8 text-accent" />
-                  <span className="font-semibold">Fully Insured</span>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="services" className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
+        <section id="about" className="w-full py-20 md:py-28 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline">
-                Our Comprehensive Painting Services
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Trusted Painting Professionals
+                  </h2>
+                  <div className="w-24 h-1.5 bg-primary"></div>
+                  <p className="text-muted-foreground text-lg">
+                    At Aussie Coat, we are defined by a commitment to excellence. For over a decade, we have been transforming spaces with precision, quality materials, and a passion for our craft. We are not just painters; we are creators of atmosphere and curators of quality, ensuring every project reflects our high standards and your unique vision.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-6">
+                    {whyChooseUs.map((item, index) => (
+                        <div key={index} className="flex flex-col items-start text-left gap-3">
+                            {item.icon}
+                            <h3 className="text-xl font-semibold">{item.title}</h3>
+                        </div>
+                    ))}
+                  </div>
+              </div>
+               <div>
+                <Image
+                  src="https://placehold.co/600x700"
+                  alt="Painter applying paint with a roller"
+                  width={600}
+                  height={700}
+                  className="rounded-md shadow-2xl object-cover"
+                  data-ai-hint="painter working"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Our Services
               </h2>
-              <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-                Tailored solutions for every surface and space.
+               <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
+              <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                We offer a comprehensive range of painting services designed to meet the diverse needs of our clients, ensuring quality, durability, and a flawless finish every time.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardHeader className="items-center gap-4">
-                    {service.icon}
-                    <CardTitle className="text-2xl font-semibold">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{service.description}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service) => (
+                <Card key={service.title} className="bg-background overflow-hidden group">
+                   <Image src={service.imgSrc} alt={service.title} width={600} height={400} className="w-full object-cover h-56 transition-transform duration-300 group-hover:scale-105" data-ai-hint={service.hint}/>
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold">{service.title}</h3>
+                    <p className="mt-2 text-muted-foreground">{service.description}</p>
+                     <Button variant="link" className="p-0 mt-4 text-primary h-auto hover:no-underline">Learn More &rarr;</Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
         </section>
-
-        <section id="about" className="w-full py-16 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <Image
-                  src="https://placehold.co/600x700"
-                  alt="Painters at work"
-                  width={600}
-                  height={700}
-                  className="rounded-lg shadow-2xl object-cover"
-                  data-ai-hint="painters working"
-                />
-              </div>
-              <div className="space-y-8">
-                <div className="space-y-3">
-                  <p className="text-primary font-semibold tracking-wide">WHY CHOOSE US</p>
-                  <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline">
-                    Committed to Excellence and Quality Craftsmanship
-                  </h2>
-                  <p className="text-muted-foreground text-lg">
-                    At Aussie Coat, we believe in doing things right. Our commitment to quality materials, expert workmanship, and customer satisfaction sets us apart.
-                  </p>
-                </div>
-                <div className="space-y-6">
-                  {whyChooseUs.map((item, index) => (
-                    <div key={index} className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <Paintbrush className="h-7 w-7 text-accent"/>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold">{item.title}</h3>
-                        <p className="mt-1 text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <a href="#contact">Get Your Free Quote</a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
         
-        <section id="visualizer" className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
+        <section id="process" className="w-full py-20 md:py-28 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Process</h2>
+                    <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
+                    <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                        We follow a meticulous process to ensure every project is completed to the highest standard, from the initial consultation to the final handover.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    {processSteps.map((step) => (
+                        <div key={step.number} className="relative flex gap-6">
+                           <div className="text-5xl font-bold text-primary opacity-20">{step.number}</div>
+                           <div className="pt-2">
+                             <h3 className="text-xl font-bold">{step.title}</h3>
+                             <p className="mt-2 text-muted-foreground">{step.description}</p>
+                           </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizer" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline">
-                Visualize Your Project
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                AI Project Visualizer
               </h2>
-              <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-                Can't decide on a color? Describe your space and let our AI generate inspirational concepts to help you envision the final result.
+               <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
+              <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                Unsure about colors? Describe your room and style, and our AI will generate photorealistic concepts to inspire your project.
               </p>
             </div>
             <div className="mx-auto max-w-4xl">
@@ -223,19 +246,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="projects" className="w-full py-16 md:py-24 lg:py-32">
+        <section id="projects" className="w-full py-20 md:py-28 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline">
+             <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Our Recent Projects
               </h2>
-              <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">
-                A showcase of our commitment to quality and attention to detail.
+              <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
+              <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                Explore a gallery of our recently completed projects.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg shadow-lg group">
+                <div key={index} className="overflow-hidden rounded-md shadow-lg group">
                   <Image
                     src={image.src}
                     alt={`Project gallery image ${index + 1}`}
@@ -250,16 +274,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
+        <section id="contact" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+             <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Get Your Free Quote Today!
+              </h2>
+              <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
+              <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                Ready to start your next project? Fill out the form below or give us a call to get a free, no-obligation estimate from our expert team.
+              </p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
                <div className="space-y-6">
-                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-headline">
-                   Get a Free, No-Obligation Quote
-                  </h2>
-                  <p className="text-muted-foreground text-lg">
-                    Ready to transform your space? Contact us today for a detailed estimate. Our team is here to answer your questions and help you get started on your painting project.
-                  </p>
+                 <h3 className="text-2xl font-bold">Contact Details</h3>
                    <div className="space-y-4 pt-4">
                      <a href="tel:(02)12345678" className="flex items-center gap-4 text-lg hover:text-primary transition-colors">
                         <Phone className="h-6 w-6 text-primary"/>
@@ -269,52 +297,38 @@ export default function HomePage() {
                         <Mail className="h-6 w-6 text-primary"/>
                         <span>contact@aussiecoat.com.au</span>
                      </a>
-                      <div className="flex items-center gap-4 text-lg">
-                        <MapPin className="h-6 w-6 text-primary"/>
-                        <span>Servicing Sydney, Melbourne, Brisbane & across Australia</span>
-                     </div>
                   </div>
               </div>
               <div>
-                <Card className="shadow-2xl">
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Contact Form</CardTitle>
-                    <CardDescription>
-                      Fill out the form and we'll get back to you shortly.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form className="space-y-4">
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                         <div className="space-y-2">
-                          <Label htmlFor="name">Full Name</Label>
-                          <Input id="name" placeholder="John Doe" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email</Label>
-                          <Input id="email" type="email" placeholder="john.doe@example.com" />
-                        </div>
-                      </div>
-                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">Phone</Label>
-                          <Input id="phone" type="tel" placeholder="0412 345 678" />
-                        </div>
-                         <div className="space-y-2">
-                          <Label htmlFor="postcode">Postcode</Label>
-                          <Input id="postcode" placeholder="2000" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" placeholder="Tell us about your project..." rows={4} />
-                      </div>
-                      <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                        Send Enquiry
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
+                <form className="space-y-4">
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                     <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input id="name" placeholder="John Doe" className="bg-background"/>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input id="email" type="email" placeholder="john.doe@example.com" className="bg-background"/>
+                    </div>
+                  </div>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone</Label>
+                      <Input id="phone" type="tel" placeholder="0412 345 678" className="bg-background"/>
+                    </div>
+                     <div className="space-y-2">
+                      <Label htmlFor="postcode">Postcode</Label>
+                      <Input id="postcode" placeholder="2000" className="bg-background"/>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea id="message" placeholder="Tell us about your project..." rows={4} className="bg-background"/>
+                  </div>
+                  <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    Send Enquiry
+                  </Button>
+                </form>
               </div>
             </div>
           </div>

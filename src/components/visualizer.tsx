@@ -60,7 +60,7 @@ export default function Visualizer() {
 
   return (
     <div className="space-y-8">
-      <Card>
+      <Card className="bg-background border-border">
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -74,7 +74,7 @@ export default function Visualizer() {
                       <Textarea
                         placeholder="e.g., A bright, modern kitchen with white cabinets, a navy blue island, and lots of natural light."
                         rows={4}
-                        className="resize-none"
+                        className="resize-none bg-secondary border-border focus:bg-background"
                         {...field}
                       />
                     </FormControl>
@@ -82,7 +82,7 @@ export default function Visualizer() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isPending} className="w-full" size="lg">
+              <Button type="submit" disabled={isPending} className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg">
                 {isPending ? "Generating..." : "Generate Ideas"}
                 {!isPending && <Sparkles className="ml-2 h-5 w-5" />}
               </Button>
@@ -93,18 +93,18 @@ export default function Visualizer() {
 
       {(isPending || images.length > 0) && (
         <div>
-            <h3 className="text-2xl font-bold text-center mb-6 font-headline">Inspiration Gallery</h3>
+            <h3 className="text-2xl font-bold text-center mb-6">Inspiration Gallery</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {isPending
                 ? Array.from({ length: 3 }).map((_, index) => (
-                    <Card key={index}>
+                    <Card key={index} className="bg-secondary border-none">
                         <CardContent className="p-0">
-                            <Skeleton className="w-full h-64" />
+                            <Skeleton className="w-full h-64 bg-muted" />
                         </CardContent>
                     </Card>
                 ))
                 : images.map((src, index) => (
-                    <Card key={index} className="overflow-hidden group">
+                    <Card key={index} className="overflow-hidden group bg-transparent border-none">
                         <CardContent className="p-0">
                         <Image
                             src={src}
