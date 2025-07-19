@@ -39,9 +39,13 @@ export default function Header() {
     if (isMobile) {
       return navLinks.map((link) => (
         <SheetClose key={link.name} asChild>
-          <Link href={link.href} className="block w-full rounded-md p-3 text-lg font-medium text-foreground transition-colors hover:bg-accent">
+          <NavLink
+            href={link.href}
+            hasScrolled={true}
+            className="block w-full rounded-md p-3 text-lg font-medium text-foreground transition-colors hover:bg-accent"
+          >
             {link.name}
-          </Link>
+          </NavLink>
         </SheetClose>
       ));
     }
@@ -74,7 +78,7 @@ export default function Header() {
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
-            <AnimatedButton href="/#contact">
+            <AnimatedButton href="/#contact" variant={hasScrolled ? 'primary' : 'secondary'}>
               Contact Us
             </AnimatedButton>
 

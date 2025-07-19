@@ -7,9 +7,10 @@ interface NavLinkProps {
   href: string;
   children: React.ReactNode;
   hasScrolled: boolean;
+  className?: string;
 }
 
-export default function NavLink({ href, children, hasScrolled }: NavLinkProps) {
+export default function NavLink({ href, children, hasScrolled, className }: NavLinkProps) {
   return (
     <Link
       href={href}
@@ -17,7 +18,8 @@ export default function NavLink({ href, children, hasScrolled }: NavLinkProps) {
         "group relative inline-block px-4 py-2 text-sm font-medium transition-colors",
         hasScrolled
           ? "text-foreground hover:text-primary"
-          : "text-white hover:text-white/90"
+          : "text-white hover:text-white/90",
+        className
       )}
     >
       <span className="relative inline-block h-5 overflow-hidden">
