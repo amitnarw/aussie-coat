@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./logo";
+import AnimatedButton from "./animated-button";
 
 export default function Footer() {
     return (
@@ -9,7 +10,7 @@ export default function Footer() {
                 {/* Logo and About */}
                 <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
                      <Link href="/" className="flex items-center gap-2 text-white">
-                        <Logo className="h-8 w-8" />
+                        <Logo className="h-8 w-8 text-white" />
                         <span className="text-2xl font-bold font-headline">Aussie Coat</span>
                     </Link>
                     <p className="text-sm text-gray-400">
@@ -21,11 +22,11 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-                        <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Services</Link></li>
-                        <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
-                        <li><Link href="/#contact" className="hover:text-white transition-colors">Contact</Link></li>
+                        <li><AnimatedButton href="/" variant="link-light" className="p-0 h-auto">Home</AnimatedButton></li>
+                        <li><AnimatedButton href="/about" variant="link-light" className="p-0 h-auto">About Us</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Services</AnimatedButton></li>
+                        <li><AnimatedButton href="/projects" variant="link-light" className="p-0 h-auto">Projects</AnimatedButton></li>
+                        <li><AnimatedButton href="/#contact" variant="link-light" className="p-0 h-auto">Contact</AnimatedButton></li>
                     </ul>
                 </div>
 
@@ -33,12 +34,12 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Residential Painting</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Commercial Painting</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Industrial Painting</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Strata Painting</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Epoxy Flooring</Link></li>
-                        <li><Link href="/#services" className="hover:text-white transition-colors">Special Finishes</Link></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Residential Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Commercial Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Industrial Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Strata Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Epoxy Flooring</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Special Finishes</AnimatedButton></li>
                     </ul>
                 </div>
 
