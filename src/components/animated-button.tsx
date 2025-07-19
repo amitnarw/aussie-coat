@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-        secondary: "border border-primary text-primary hover:bg-primary hover:text-primary-foreground backdrop-blur-sm bg-white/10 dark:bg-black/10",
+        secondary: "border border-primary text-primary bg-background hover:bg-primary hover:text-primary-foreground",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
         link: "text-primary hover:no-underline",
       },
@@ -45,17 +45,11 @@ export default function AnimatedButton({ href, children, variant, size, classNam
     </>
   );
 
-  if (href) {
-    return (
-      <Link href={href} className={cn(buttonVariants({ variant, size, className }))} {...props}>
-        {content}
-      </Link>
-    );
-  }
+  const Comp = href ? Link : 'button';
 
   return (
-    <button className={cn(buttonVariants({ variant, size, className }))} {...props}>
-      {content}
-    </button>
+      <Comp href={href!} className={cn(buttonVariants({ variant, size, className }))} {...props}>
+          {content}
+      </Comp>
   );
 }

@@ -382,7 +382,7 @@ export default function HomePage() {
                         <Label htmlFor="message">Message</Label>
                         <Textarea id="message" placeholder="Tell us about your project..." rows={4} className="bg-background"/>
                       </div>
-                       <AnimatedButton type="submit" variant="accent" size="lg" className="w-full">
+                       <AnimatedButton type="submit" variant="primary" size="lg" className="w-full">
                         Send Enquiry
                       </AnimatedButton>
                     </form>

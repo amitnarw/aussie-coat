@@ -35,8 +35,8 @@ export default function Header() {
   const renderNavLinks = (isMobile: boolean = false) => navLinks.map((link) => {
     const linkClasses = cn(
         "font-medium transition-colors hover:text-primary",
-        isMobile ? "text-lg text-foreground" : "text-sm",
-        !isMobile && !hasScrolled && "text-white"
+        isMobile ? "text-lg" : "text-sm",
+        !hasScrolled && !isMobile ? "text-white" : "text-foreground"
     );
 
     if (isMobile) {
@@ -48,7 +48,7 @@ export default function Header() {
     }
 
     return (
-       <AnimatedButton key={link.name} href={link.href} variant="link" className={linkClasses}>
+       <AnimatedButton key={link.name} href={link.href} variant="link" className={cn(linkClasses, "px-2")}>
          {link.name}
        </AnimatedButton>
     )
