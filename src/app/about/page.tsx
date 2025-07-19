@@ -86,13 +86,13 @@ export default function AboutPage() {
                     alt="Aussie Coat founder"
                     width={600}
                     height={700}
-                    className="rounded-lg shadow-2xl object-cover"
+                    className="shadow-2xl object-cover"
                     data-ai-hint="professional painter"
                   />
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Story</h2>
-                  <div className="w-24 h-1.5 bg-primary rounded-sm"></div>
+                  <div className="w-24 h-1.5 bg-primary"></div>
                   <p className="text-muted-foreground text-lg">
                     Founded in 2010, Aussie Coat started as a small team of passionate painters with a shared vision: to deliver exceptional painting services that transform spaces and exceed client expectations. Over the years, we've grown into one of Australia's most trusted painting companies, but our core values of quality, integrity, and customer satisfaction remain unchanged.
                   </p>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Mission & Vision</h2>
-                        <div className="w-24 h-1.5 bg-primary rounded-sm"></div>
+                        <div className="w-24 h-1.5 bg-primary"></div>
                         <div className="space-y-8">
                             <div className="flex gap-4">
                                 <Target className="h-12 w-12 text-primary flex-shrink-0 mt-1"/>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                             alt="Painter looking over a city"
                             width={600}
                             height={500}
-                            className="rounded-lg shadow-2xl object-cover"
+                            className="shadow-2xl object-cover"
                             data-ai-hint="vision city view"
                         />
                     </div>
@@ -149,7 +149,7 @@ export default function AboutPage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Values</h2>
-                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                 <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                   The principles that guide every brushstroke and decision we make.
                 </p>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Meet Our Team</h2>
-                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                 <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                   The dedicated professionals behind our success.
                 </p>

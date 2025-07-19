@@ -164,7 +164,7 @@ export default function HomePage() {
                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                         Trusted Painting Professionals
                       </h2>
-                      <div className="w-24 h-1.5 bg-primary rounded-sm"></div>
+                      <div className="w-24 h-1.5 bg-primary"></div>
                       <p className="text-muted-foreground text-lg">
                         At Aussie Coat, we are defined by a commitment to excellence. For over a decade, we have been transforming spaces with precision, quality materials, and a passion for our craft. We are not just painters; we are creators of atmosphere and curators of quality, ensuring every project reflects our high standards and your unique vision.
                       </p>
@@ -183,7 +183,7 @@ export default function HomePage() {
                       alt="Painter applying paint with a roller"
                       width={600}
                       height={700}
-                      className="rounded-lg shadow-2xl object-cover"
+                      className="shadow-2xl object-cover"
                       data-ai-hint="painter working"
                     />
                   </div>
@@ -199,7 +199,7 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Our Services
                   </h2>
-                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     We offer a comprehensive range of painting services designed to meet the diverse needs of our clients, ensuring quality, durability, and a flawless finish every time.
                   </p>
@@ -227,7 +227,7 @@ export default function HomePage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Meticulous Process</h2>
-                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                 <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                   We follow a structured and transparent process to ensure every project is completed to the highest standard, from the initial consultation to the final handover.
                 </p>
@@ -258,14 +258,14 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Our Recent Projects
                   </h2>
-                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     Explore a gallery of our recently completed projects.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {galleryImages.map((image, index) => (
-                    <div key={index} className="overflow-hidden rounded-lg shadow-lg group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                    <div key={index} className="overflow-hidden shadow-lg group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                       <Image
                         src={image.src}
                         alt={`Project gallery image ${index + 1}`}
@@ -288,7 +288,7 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                   Our Trusted Partners
                 </h2>
-                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                 <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                   We collaborate with industry-leading brands and suppliers to deliver the highest quality materials and finishes for your projects.
                 </p>
@@ -318,7 +318,7 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Get Your Free Quote Today!
                   </h2>
-                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     Ready to start your next project? Fill out the form below or give us a call to get a free, no-obligation estimate from our expert team.
                   </p>
