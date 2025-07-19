@@ -79,7 +79,7 @@ export default function ProjectsPage() {
       <main className="flex-1">
         <AnimatedSection>
           <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/40 to-black/80 z-10" />
             <Image
               src="/leon-rojas-i43gwmENeEo-unsplash.jpg"
               alt="Collection of project images"
