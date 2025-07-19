@@ -78,9 +78,9 @@ export default function Header() {
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
-             <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
-              Contact Us
-            </AnimatedButton>
+            <Button asChild className="hidden sm:inline-flex" size="default" variant="primary">
+                <Link href="/#contact">Contact Us</Link>
+            </Button>
             <ThemeToggle hasScrolled={hasScrolled} />
             <Sheet>
                 <SheetTrigger asChild>
