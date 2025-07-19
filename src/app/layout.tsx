@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
-  title: "Aussie Coat | Professional Painting Services",
+  title: "Aussie Coat | Premier Painting Services",
   description:
-    "Aussie Coat offers top-quality residential and commercial painting services across Australia. Get a free quote today!",
+    "Aussie Coat offers top-quality residential and commercial painting services across Australia. Delivering flawless finishes for residential & commercial properties.",
 };
 
 export default function RootLayout({
@@ -14,15 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`scroll-smooth ${poppins.variable}`}>
       <body className="font-body antialiased">
         {children}
         <Toaster />
