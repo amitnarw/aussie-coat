@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from "next/image";
 import {
   Home,
@@ -16,6 +18,15 @@ import {
   Layers,
   ArrowRight
 } from "lucide-react";
+
+import * as React from "react"
+ 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 import {
   Card,
@@ -120,10 +131,17 @@ const partners = [
     { name: "Partner Four", logo: "https://placehold.co/150x60.png" },
     { name: "Partner Five", logo: "https://placehold.co/150x60.png" },
     { name: "Partner Six", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Seven", logo: "https://placehold.co/150x60.png" },
+    { name: "Partner Eight", logo: "https://placehold.co/150x60.png" },
 ]
 
 
 export default function HomePage() {
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
@@ -293,20 +311,33 @@ export default function HomePage() {
                   We collaborate with industry-leading brands and suppliers to deliver the highest quality materials and finishes for your projects.
                 </p>
               </div>
-              <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-                {partners.map((partner, index) => (
-                  <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={150}
-                      height={60}
-                      className="object-contain"
-                      data-ai-hint="logo"
-                    />
-                  </div>
-                ))}
-              </div>
+              <Carousel
+                plugins={[plugin.current]}
+                className="w-full"
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+              >
+                <CarouselContent>
+                  {partners.map((partner, index) => (
+                    <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
+                      <div className="p-1">
+                        <div className="grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center p-6">
+                           <Image
+                            src={partner.logo}
+                            alt={partner.name}
+                            width={150}
+                            height={60}
+                            className="object-contain"
+                            data-ai-hint="logo"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </section>
         </AnimatedSection>
