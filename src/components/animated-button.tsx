@@ -17,9 +17,9 @@ const buttonVariants = cva(
         nav: "hover:text-primary",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 px-3",
-        lg: "h-11 px-8 text-lg",
+        default: "h-10",
+        sm: "h-9",
+        lg: "h-11 text-lg",
         icon: "h-10 w-10",
       },
     },
@@ -36,13 +36,20 @@ interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 }
 
 export default function AnimatedButton({ href, children, variant, size, className, ...props }: AnimatedButtonProps) {
+  const sizeClasses = {
+    default: "px-4 py-2",
+    sm: "px-3",
+    lg: "px-8",
+    icon: ""
+  };
+
   const content = (
     <>
       <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
-        <span className="flex items-center justify-center">{children}</span>
+        <span className={cn("flex items-center justify-center", size && sizeClasses[size])}>{children}</span>
       </span>
       <span className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
-        <span className="flex items-center justify-center">{children}</span>
+        <span className={cn("flex items-center justify-center", size && sizeClasses[size])}>{children}</span>
       </span>
     </>
   );
