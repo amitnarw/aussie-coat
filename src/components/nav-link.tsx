@@ -14,16 +14,16 @@ export default function NavLink({ href, children, hasScrolled }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "group relative inline-flex h-10 items-center justify-center overflow-hidden px-4 py-2 text-sm font-medium transition-colors",
+        "group relative inline-block overflow-hidden px-4 py-2 text-sm font-medium transition-colors",
         hasScrolled
           ? "text-foreground hover:text-primary"
           : "text-white hover:text-white/90"
       )}
     >
-      <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+      <span className="relative inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
         {children}
       </span>
-      <span className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+      <span className="absolute left-1/2 top-full -translate-x-1/2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
         {children}
       </span>
     </Link>

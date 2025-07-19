@@ -39,7 +39,7 @@ export default function Header() {
     if (isMobile) {
       return navLinks.map((link) => (
         <SheetClose key={link.name} asChild>
-          <Link href={link.href} className={cn("text-lg text-foreground p-0 font-medium")}>
+          <Link href={link.href} className="block w-full rounded-md p-3 text-lg font-medium text-foreground transition-colors hover:bg-accent">
             {link.name}
           </Link>
         </SheetClose>
@@ -99,7 +99,7 @@ export default function Header() {
                             </Button>
                         </SheetClose>
                     </SheetHeader>
-                    <nav className="flex flex-col gap-6 p-4 mt-4">
+                    <nav className="flex flex-col gap-4 p-4 mt-4">
                         {renderNavLinks(true)}
                     </nav>
                      <div className="mt-auto p-4 border-t border-border">
