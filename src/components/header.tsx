@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PaintRoller, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
 import AnimatedButton from "./animated-button";
+import Logo from "./logo";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -48,7 +49,7 @@ export default function Header() {
     }
 
     return (
-       <AnimatedButton key={link.name} href={link.href} variant="link" className={cn(linkClasses, "px-2")}>
+       <AnimatedButton key={link.name} href={link.href} variant="link" size="sm" className={cn(linkClasses, "px-2 py-1")}>
          {link.name}
        </AnimatedButton>
     )
@@ -62,7 +63,7 @@ export default function Header() {
     )}>
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <PaintRoller className="h-8 w-8 text-primary" />
+          <Logo className={cn("h-8 w-8", hasScrolled ? "text-primary" : "text-white")} />
           <span className={cn("text-2xl font-bold font-headline", hasScrolled ? "text-foreground" : "text-white")}>
             Aussie Coat
           </span>
@@ -71,13 +72,13 @@ export default function Header() {
             {renderNavLinks()}
         </nav>
         <div className="flex items-center gap-2">
-             <AnimatedButton href="/#contact" variant="primary" className="hidden sm:inline-flex">
+             <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
               Get a Free Quote
             </AnimatedButton>
-            <ThemeToggle />
+            <ThemeToggle hasScrolled={hasScrolled} />
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className={cn("lg:hidden hover:text-primary hover:bg-transparent", hasScrolled ? "text-foreground" : "text-white")}>
+                    <Button variant="ghost" size="icon" className={cn("lg:hidden hover:bg-transparent", hasScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80")}>
                         <Menu className="h-6 w-6" />
                         <span className="sr-only">Open Menu</span>
                     </Button>
@@ -85,7 +86,7 @@ export default function Header() {
                 <SheetContent side="right" className="bg-background border-l-border w-[300px] p-0 flex flex-col">
                     <div className="flex justify-between items-center p-4 border-b border-border">
                          <Link href="/" className="flex items-center gap-2">
-                            <PaintRoller className="h-7 w-7 text-primary" />
+                            <Logo className="h-7 w-7 text-primary" />
                             <span className="text-xl font-bold font-headline">Aussie Coat</span>
                         </Link>
                         <SheetClose asChild>

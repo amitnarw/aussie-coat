@@ -26,7 +26,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import Visualizer from "@/components/visualizer";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { AnimatedSection } from "@/components/animated-section";
@@ -252,26 +251,7 @@ export default function HomePage() {
         </AnimatedSection>
 
         <AnimatedSection>
-            <section id="visualizer" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
-              <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
-                    AI Project Visualizer
-                  </h2>
-                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
-                  <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
-                    Unsure about colors? Describe your room and style, and our AI will generate photorealistic concepts to inspire your project.
-                  </p>
-                </div>
-                <div className="mx-auto max-w-4xl">
-                  <Visualizer />
-                </div>
-              </div>
-            </section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-            <section id="projects" className="w-full py-20 md:py-28 lg:py-32">
+            <section id="projects" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
               <div className="container mx-auto px-4 md:px-6">
                  <div className="text-center mb-16">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
@@ -301,7 +281,7 @@ export default function HomePage() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <section id="partners" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
+          <section id="partners" className="w-full py-20 md:py-28 lg:py-32 bg-background">
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
@@ -331,7 +311,7 @@ export default function HomePage() {
         </AnimatedSection>
 
         <AnimatedSection>
-            <section id="contact" className="w-full py-20 md:py-28 lg:py-32">
+            <section id="contact" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
               <div className="container mx-auto px-4 md:px-6">
                  <div className="text-center mb-16">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">

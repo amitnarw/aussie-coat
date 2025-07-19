@@ -3,10 +3,15 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import { cn } from "@/lib/utils"
 
 import { Button } from "@/components/ui/button"
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  hasScrolled?: boolean;
+}
+
+export function ThemeToggle({ hasScrolled }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
@@ -18,7 +23,10 @@ export function ThemeToggle() {
       variant="ghost" 
       size="icon" 
       onClick={toggleTheme}
-      className="hover:bg-transparent hover:text-primary"
+      className={cn(
+        "hover:bg-transparent", 
+        hasScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+      )}
       aria-label="Toggle theme"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
