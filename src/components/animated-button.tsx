@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -5,12 +6,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group relative inline-flex items-center justify-center overflow-hidden whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex items-center justify-center overflow-hidden whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-        secondary: "border border-primary text-primary bg-background hover:bg-primary hover:text-primary-foreground",
+        secondary: "border border-input text-foreground bg-background hover:bg-accent hover:text-accent-foreground",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
         link: "text-primary hover:no-underline",
         "link-light": "text-gray-300 hover:text-white hover:no-underline",
@@ -37,22 +38,30 @@ interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 
 export default function AnimatedButton({ href, children, variant, size, className, ...props }: AnimatedButtonProps) {
 
-  const content = (
-    <>
-      <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
-        {children}
-      </span>
-      <span className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
-        {children}
-      </span>
-    </>
-  );
-
   const Comp = href ? Link : 'button';
 
+  const commonContent = (
+    <span className="flex h-full w-full items-center justify-center">
+      <span className="block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[150%]">
+        {children}
+      </span>
+      <span className="absolute block translate-y-[150%] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+        {children}
+      </span>
+    </span>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={cn(buttonVariants({ variant, size, className }))} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+        {commonContent}
+      </Link>
+    );
+  }
+
   return (
-      <Comp href={href!} className={cn(buttonVariants({ variant, size, className }))} {...props}>
-          {content}
-      </Comp>
+    <button className={cn(buttonVariants({ variant, size, className }))} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
+      {commonContent}
+    </button>
   );
 }
