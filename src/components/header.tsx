@@ -15,7 +15,6 @@ const navLinks = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/#services" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -37,21 +36,17 @@ export default function Header() {
     const linkClasses = cn(
         "font-medium transition-colors hover:text-primary",
         isMobile ? "text-lg" : "text-sm",
-        !hasScrolled && !isMobile ? "text-white" : "text-foreground"
+        hasScrolled || isMobile ? "text-foreground" : "text-white"
     );
 
-    if (isMobile) {
-      return (
-        <SheetClose key={link.name} asChild>
-           <AnimatedButton href={link.href} variant="link" className={linkClasses}>{link.name}</AnimatedButton>
-        </SheetClose>
-      )
-    }
-
+    const Comp = isMobile ? SheetClose : 'div';
+    
     return (
-       <AnimatedButton key={link.name} href={link.href} variant="link" size="sm" className={cn(linkClasses, "px-2 py-1")}>
-         {link.name}
-       </AnimatedButton>
+       <Comp key={link.name} asChild={isMobile}>
+         <AnimatedButton href={link.href} variant="link" size="default" className={cn(linkClasses, "px-2 py-1 h-auto")}>
+           {link.name}
+         </AnimatedButton>
+      </Comp>
     )
   });
 
@@ -71,9 +66,9 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-1">
             {renderNavLinks()}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
              <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
-              Get a Free Quote
+              Contact Us
             </AnimatedButton>
             <ThemeToggle hasScrolled={hasScrolled} />
             <Sheet>
@@ -100,7 +95,7 @@ export default function Header() {
                     </nav>
                      <div className="mt-auto p-4 border-t border-border">
                         <AnimatedButton href="/#contact" variant="primary" className="w-full">
-                          Get a Free Quote
+                          Contact Us
                         </AnimatedButton>
                     </div>
                 </SheetContent>
