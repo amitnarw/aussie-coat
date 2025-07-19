@@ -22,6 +22,7 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
+                        <li><AnimatedButton href="/" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Home</AnimatedButton></li>
                         <li><AnimatedButton href="/about" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">About Us</AnimatedButton></li>
                         <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Services</AnimatedButton></li>
                         <li><AnimatedButton href="/projects" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Projects</AnimatedButton></li>
@@ -33,10 +34,12 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Residential</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Commercial</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Industrial</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Residential Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Commercial Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Industrial Painting</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Strata Painting</AnimatedButton></li>
                         <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Epoxy Flooring</AnimatedButton></li>
+                        <li><AnimatedButton href="/#services" variant="link" className="p-0 h-auto text-gray-300 hover:text-white">Special Finishes</AnimatedButton></li>
                     </ul>
                 </div>
 
