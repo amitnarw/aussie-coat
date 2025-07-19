@@ -114,6 +114,15 @@ const processSteps = [
     { number: "06", title: "Final Walk-through", description: "We conduct a final inspection with you to guarantee your complete satisfaction with the finished work." },
 ]
 
+const partners = [
+    { name: "Partner One", logo: "https://placehold.co/150x60" },
+    { name: "Partner Two", logo: "https://placehold.co/150x60" },
+    { name: "Partner Three", logo: "https://placehold.co/150x60" },
+    { name: "Partner Four", logo: "https://placehold.co/150x60" },
+    { name: "Partner Five", logo: "https://placehold.co/150x60" },
+    { name: "Partner Six", logo: "https://placehold.co/150x60" },
+]
+
 
 export default function HomePage() {
   return (
@@ -140,10 +149,10 @@ export default function HomePage() {
                     Aussie Coat delivers premium painting services with unparalleled quality and craftsmanship for homes and businesses across Australia.
                   </p>
                   <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                    <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-lg transition-transform hover:scale-105">
+                    <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 shadow-lg transition-transform hover:scale-105">
                       <a href="#contact">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5"/></a>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-transform hover:scale-105 backdrop-blur-sm bg-white/10">
+                    <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-transform hover:scale-105 backdrop-blur-sm bg-white/10">
                       <a href="#services">Our Services</a>
                     </Button>
                   </div>
@@ -160,7 +169,7 @@ export default function HomePage() {
                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                         Trusted Painting Professionals
                       </h2>
-                      <div className="w-24 h-1.5 bg-primary rounded-full"></div>
+                      <div className="w-24 h-1.5 bg-primary rounded-sm"></div>
                       <p className="text-muted-foreground text-lg">
                         At Aussie Coat, we are defined by a commitment to excellence. For over a decade, we have been transforming spaces with precision, quality materials, and a passion for our craft. We are not just painters; we are creators of atmosphere and curators of quality, ensuring every project reflects our high standards and your unique vision.
                       </p>
@@ -195,7 +204,7 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Our Services
                   </h2>
-                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     We offer a comprehensive range of painting services designed to meet the diverse needs of our clients, ensuring quality, durability, and a flawless finish every time.
                   </p>
@@ -221,7 +230,7 @@ export default function HomePage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Meticulous Process</h2>
-                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
                 <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                   We follow a structured and transparent process to ensure every project is completed to the highest standard, from the initial consultation to the final handover.
                 </p>
@@ -252,7 +261,7 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     AI Project Visualizer
                   </h2>
-                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                   <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     Unsure about colors? Describe your room and style, and our AI will generate photorealistic concepts to inspire your project.
                   </p>
@@ -271,7 +280,7 @@ export default function HomePage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Our Recent Projects
                   </h2>
-                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     Explore a gallery of our recently completed projects.
                   </p>
@@ -295,13 +304,43 @@ export default function HomePage() {
         </AnimatedSection>
 
         <AnimatedSection>
-            <section id="contact" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
+          <section id="partners" className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
+                  Our Trusted Partners
+                </h2>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
+                <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                  We collaborate with industry-leading brands and suppliers to deliver the highest quality materials and finishes for your projects.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                {partners.map((partner, index) => (
+                  <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={150}
+                      height={60}
+                      className="object-contain"
+                      data-ai-hint="logo"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection>
+            <section id="contact" className="w-full py-20 md:py-28 lg:py-32">
               <div className="container mx-auto px-4 md:px-6">
                  <div className="text-center mb-16">
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                     Get Your Free Quote Today!
                   </h2>
-                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                  <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-sm"></div>
                   <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
                     Ready to start your next project? Fill out the form below or give us a call to get a free, no-obligation estimate from our expert team.
                   </p>
@@ -346,7 +385,7 @@ export default function HomePage() {
                         <Label htmlFor="message">Message</Label>
                         <Textarea id="message" placeholder="Tell us about your project..." rows={4} className="bg-background"/>
                       </div>
-                      <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full text-lg shadow-lg hover:shadow-xl transition-shadow">
+                      <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg shadow-lg hover:shadow-xl transition-shadow">
                         Send Enquiry
                       </Button>
                     </form>

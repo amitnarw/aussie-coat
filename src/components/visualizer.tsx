@@ -82,7 +82,7 @@ export default function Visualizer() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full" size="lg">
+              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
                 {isPending ? "Generating..." : "Generate Ideas"}
                 {!isPending && <Sparkles className="ml-2 h-5 w-5" />}
               </Button>

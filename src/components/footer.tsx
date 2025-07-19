@@ -1,5 +1,5 @@
 import { PaintRoller } from "lucide-react";
-import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -21,10 +21,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-                        <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
-                        <li><a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</a></li>
-                        <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                        <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+                        <li><Link href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link></li>
+                        <li><Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</Link></li>
+                        <li><Link href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -32,10 +32,10 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Residential</a></li>
-                        <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Commercial</a></li>
-                        <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Industrial</a></li>
-                        <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Epoxy Flooring</a></li>
+                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Residential</a></li>
+                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Commercial</a></li>
+                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Industrial</a></li>
+                        <li><a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">Epoxy Flooring</a></li>
                     </ul>
                 </div>
 
