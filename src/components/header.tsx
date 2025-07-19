@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "./ui/sheet";
 import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
 import AnimatedButton from "./animated-button";
@@ -34,29 +34,31 @@ export default function Header() {
   }, []);
 
   const renderNavLinks = (isMobile: boolean = false) => {
-    return navLinks.map((link) => {
-      const linkClasses = cn(
-        "font-medium transition-colors hover:text-primary",
-        isMobile ? "text-lg" : "text-sm",
-        hasScrolled || isMobile ? "text-foreground" : "text-white"
-      );
+    const linkClasses = cn(
+      "font-medium transition-colors hover:text-primary",
+      isMobile ? "text-lg" : "text-sm",
+      hasScrolled || isMobile ? "text-foreground" : "text-white"
+    );
 
-      if (isMobile) {
-        return (
-          <SheetClose key={link.name} asChild>
-            <Link href={link.href} className={cn(linkClasses, "p-0")}>
-              {link.name}
-            </Link>
-          </SheetClose>
-        );
-      }
-      
-      return (
-        <Link key={link.name} href={link.href} className={cn(linkClasses, "px-4 py-2")}>
-          {link.name}
-        </Link>
-      );
-    });
+    if (isMobile) {
+      return navLinks.map((link) => (
+        <SheetClose key={link.name} asChild>
+          <Link href={link.href} className={cn(linkClasses, "p-0")}>
+            {link.name}
+          </Link>
+        </SheetClose>
+      ));
+    }
+    
+    return navLinks.map((link) => (
+      <Link
+        key={link.name}
+        href={link.href}
+        className={cn(linkClasses, "px-4 py-2 rounded-md")}
+      >
+        {link.name}
+      </Link>
+    ));
   };
 
 
@@ -88,17 +90,18 @@ export default function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-background border-l-border w-[300px] p-0 flex flex-col">
-                    <div className="flex justify-between items-center p-4 border-b border-border">
+                    <SheetHeader className="flex flex-row justify-between items-center p-4 border-b border-border">
                          <Link href="/" className="flex items-center gap-2">
                             <Logo className="h-7 w-7 text-primary" />
                             <span className="text-xl font-bold font-headline">Aussie Coat</span>
                         </Link>
+                        <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
                         <SheetClose asChild>
                             <Button variant="ghost" size="icon" className="hover:text-primary">
                                 <X className="h-6 w-6"/>
                             </Button>
                         </SheetClose>
-                    </div>
+                    </SheetHeader>
                     <nav className="flex flex-col gap-6 p-4 mt-4">
                         {renderNavLinks(true)}
                     </nav>
