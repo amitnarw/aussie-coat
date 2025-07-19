@@ -64,7 +64,7 @@ export default function FAQPage() {
               data-ai-hint="customer service"
             />
             <div className="container mx-auto px-4 md:px-6 z-20 text-center">
-              <h1 className="text-6xl font-extrabold tracking-tight sm:text-7xl md:text-8xl text-white font-headline">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white font-headline">
                 Frequently Asked Questions
               </h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
@@ -80,7 +80,7 @@ export default function FAQPage() {
               <Accordion type="single" collapsible className="w-full">
                 {faqData.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                    <AccordionTrigger className="text-left text-xl font-bold hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground text-base">
