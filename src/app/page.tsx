@@ -22,13 +22,6 @@ import {
 import * as React from "react"
  
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
-
-import {
   Card,
   CardContent,
   CardHeader,
@@ -137,10 +130,6 @@ const partners = [
 
 
 export default function HomePage() {
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
@@ -311,33 +300,26 @@ export default function HomePage() {
                   We collaborate with industry-leading brands and suppliers to deliver the highest quality materials and finishes for your projects.
                 </p>
               </div>
-              <Carousel
-                plugins={[plugin.current]}
-                className="w-full"
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
+              <div
+                className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0,hsl(var(--background))_128px,hsl(var(--background))_calc(100%-128px),transparent_100%)]"
               >
-                <CarouselContent>
-                  {partners.map((partner, index) => (
-                    <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
-                      <div className="p-1">
-                        <div className="grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center p-6">
-                           <Image
-                            src={partner.logo}
-                            alt={partner.name}
-                            width={150}
-                            height={60}
-                            className="object-contain"
-                            data-ai-hint="logo"
-                          />
-                        </div>
+                <div className="flex w-max animate-scroll group-hover:[animation-play-state:paused]">
+                  {[...partners, ...partners].map((partner, index) => (
+                    <div key={index} className="flex-shrink-0 w-64 px-8">
+                       <div className="grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center p-6">
+                         <Image
+                          src={partner.logo}
+                          alt={partner.name}
+                          width={150}
+                          height={60}
+                          className="object-contain"
+                          data-ai-hint="logo"
+                        />
                       </div>
-                    </CarouselItem>
+                    </div>
                   ))}
-                </CarouselContent>
-              </Carousel>
+                </div>
+              </div>
             </div>
           </section>
         </AnimatedSection>

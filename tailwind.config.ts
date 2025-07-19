@@ -77,10 +77,16 @@ export default {
             height: '0',
           },
         },
+        scroll: {
+          to: {
+            transform: 'translateX(calc(-100% - 4rem))',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'scroll': 'scroll 40s linear infinite',
       },
     },
   },
