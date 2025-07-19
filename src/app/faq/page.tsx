@@ -57,7 +57,7 @@ export default function FAQPage() {
           <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
-              src="https://placehold.co/1920x600"
+              src="https://images.unsplash.com/photo-1553775282-20af8077967e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
               alt="Painter answering a question"
               fill
               className="object-cover z-0"

@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Award, Users, Smile, Building, Target, Eye } from "lucide-react";
 import Header from "@/components/header";
@@ -9,25 +10,25 @@ const teamMembers = [
   {
     name: "John Smith",
     role: "Founder & Lead Painter",
-    imgSrc: "https://placehold.co/400x400",
+    imgSrc: "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80",
     hint: "male portrait"
   },
   {
     name: "Jane Doe",
     role: "Project Manager",
-    imgSrc: "https://placehold.co/400x400",
+    imgSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
     hint: "female portrait"
   },
   {
     name: "Peter Jones",
     role: "Senior Painter",
-    imgSrc: "https://placehold.co/400x400",
+    imgSrc: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
     hint: "man portrait"
   },
     {
     name: "Emily White",
     role: "Customer Relations",
-    imgSrc: "https://placehold.co/400x400",
+    imgSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80",
     hint: "woman portrait"
   },
 ];
@@ -59,7 +60,7 @@ export default function AboutPage() {
             <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
                  <Image
-                    src="https://placehold.co/1920x600"
+                    src="https://images.unsplash.com/photo-1558221639-2c6d4a4a4fca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                     alt="Team of painters working together"
                     fill
                     className="object-cover z-0"
@@ -79,10 +80,10 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="w-full py-20 md:py-28 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                   <Image
-                    src="https://placehold.co/600x700"
+                    src="https://images.unsplash.com/photo-1543357152-9646452292a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
                     alt="Aussie Coat founder"
                     width={600}
                     height={700}
@@ -131,7 +132,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                         <Image
-                            src="https://placehold.co/600x500"
+                            src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                             alt="Painter looking over a city"
                             width={600}
                             height={500}
