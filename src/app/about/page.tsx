@@ -68,7 +68,7 @@ export default function AboutPage() {
                 />
                 <div className="container mx-auto px-4 md:px-6 z-20 text-center">
                     <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white font-headline">
-                        About Aussie Coat
+                        About CBR Painters
                     </h1>
                     <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
                         Painting with Passion, Precision, and Professionalism.
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://placehold.co/600x700.png"
-                    alt="Aussie Coat founder"
+                    alt="CBR Painters founder"
                     width={600}
                     height={700}
                     className="shadow-2xl object-cover"
@@ -95,7 +95,7 @@ export default function AboutPage() {
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Story</h2>
                   <div className="w-24 h-1.5 bg-primary"></div>
                   <p className="text-muted-foreground text-lg">
-                    Founded in 2010, Aussie Coat started as a small team of passionate painters with a shared vision: to deliver exceptional painting services that transform spaces and exceed client expectations. Over the years, we've grown into one of Australia's most trusted painting companies, but our core values of quality, integrity, and customer satisfaction remain unchanged.
+                    Founded in 2010, CBR Painters started as a small team of passionate painters with a shared vision: to deliver exceptional painting services that transform spaces and exceed client expectations. Over the years, we've grown into one of Australia's most trusted painting companies, but our core values of quality, integrity, and customer satisfaction remain unchanged.
                   </p>
                   <p className="text-muted-foreground text-lg">
                     We believe that a fresh coat of paint can do more than just change a color; it can rejuvenate a home, energize a workspace, and protect a valuable asset. Our commitment to meticulous preparation, flawless application, and using the best materials ensures a stunning and long-lasting result for every project, big or small.

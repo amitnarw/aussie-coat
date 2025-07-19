@@ -6,13 +6,16 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"]
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Aussie Coat | Premier Painting Services",
+  title: {
+    default: "CBR Painters | Premier Painting Services",
+    template: "%s | CBR Painters"
+  },
   description:
-    "Aussie Coat offers top-quality residential and commercial painting services across Australia. Delivering flawless finishes for residential & commercial properties.",
+    "CBR Painters offers top-quality residential and commercial painting services across Australia. Delivering flawless finishes for residential & commercial properties.",
 };
 
 export default function RootLayout({

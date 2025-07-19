@@ -13,7 +13,6 @@ export default function Footer() {
     const navLinks = [
         { name: "Services", href: "/#services" },
         { name: "Projects", href: "/projects" },
-        { name: "Partners", href: "/#partners" },
         { name: "About", href: "/about" },
         { name: "FAQ", href: "/faq" },
     ];
@@ -23,12 +22,12 @@ export default function Footer() {
         <div className="container mx-auto px-4 md:px-6 py-16 flex flex-col items-center text-center">
             
             <div className="mb-8">
-                <Link href="/" className="text-5xl md:text-6xl font-semibold tracking-tighter uppercase">
-                    Aussie Coat
+                <Link href="/" className="text-4xl md:text-6xl font-semibold tracking-[2] uppercase">
+                    CBR Painters
                 </Link>
             </div>
 
-            <nav className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-6 mb-8">
+            <nav className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-8 mb-8">
                 {navLinks.map((link, index) => (
                     <React.Fragment key={link.name}>
                         <Link href={link.href} className="group text-sm uppercase tracking-wider transition-colors hover:text-gray-300">
@@ -60,7 +59,7 @@ export default function Footer() {
         </div>
         <div className="w-full border-t border-white/20">
              <div className="container mx-auto px-4 md:px-6 py-6 text-center text-xs text-gray-400">
-                <p>© {new Date().getFullYear()} Aussie Coat. All Rights Reserved.</p>
+                <p>© {new Date().getFullYear()} CBR Painters. All Rights Reserved.</p>
             </div>
         </div>
       </footer>

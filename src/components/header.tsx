@@ -70,8 +70,8 @@ export default function Header() {
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Logo className={cn("h-8 w-8", hasScrolled ? "text-primary" : "text-white")} />
-          <span className={cn("text-2xl font-bold font-headline", hasScrolled ? "text-foreground" : "text-white")}>
-            Aussie Coat
+          <span className={cn("text-2xl font-bold font-headline hidden sm:block", hasScrolled ? "text-foreground" : "text-white")}>
+            CBR Painters
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-6">
@@ -94,7 +94,7 @@ export default function Header() {
                     <SheetHeader className="flex flex-row justify-between items-center p-4 border-b border-border">
                          <Link href="/" className="flex items-center gap-2">
                             <Logo className="h-7 w-7 text-primary" />
-                            <span className="text-xl font-bold font-headline">Aussie Coat</span>
+                            <span className="text-xl font-bold font-headline">CBR Painters</span>
                         </Link>
                         <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
                         <SheetClose asChild>

@@ -34,7 +34,7 @@ const faqData = [
   {
     question: "Are you licensed and insured?",
     answer:
-      "Yes, Aussie Coat is a fully licensed and insured painting contractor. We carry comprehensive public liability insurance and all our painters are covered by workers' compensation. We are happy to provide certificates of currency upon request.",
+      "Yes, CBR Painters is a fully licensed and insured painting contractor. We carry comprehensive public liability insurance and all our painters are covered by workers' compensation. We are happy to provide certificates of currency upon request.",
   },
   {
     question: "What is your process for preparing the surfaces?",

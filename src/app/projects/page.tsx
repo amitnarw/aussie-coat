@@ -1,10 +1,15 @@
-
 import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { AnimatedSection } from "@/components/animated-section";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+
+export const metadata = {
+  title: "Projects",
+  description:
+    "CBR Painters offers top-quality residential and commercial painting services across Australia. Delivering flawless finishes for residential & commercial properties.",
+};
 
 const projects = {
   residential: [
@@ -18,8 +23,14 @@ const projects = {
   commercial: [
     { src: "https://placehold.co/600x400.png", hint: "modern office lobby" },
     { src: "https://placehold.co/600x400.png", hint: "retail store interior" },
-    { src: "https://placehold.co/600x400.png", hint: "restaurant interior design" },
-    { src: "https://placehold.co/600x400.png", hint: "corporate building exterior" },
+    {
+      src: "https://placehold.co/600x400.png",
+      hint: "restaurant interior design",
+    },
+    {
+      src: "https://placehold.co/600x400.png",
+      hint: "corporate building exterior",
+    },
     { src: "https://placehold.co/600x400.png", hint: "cafe interior" },
     { src: "https://placehold.co/600x400.png", hint: "hotel reception" },
   ],
@@ -28,12 +39,19 @@ const projects = {
     { src: "https://placehold.co/600x400.png", hint: "factory floor painting" },
     { src: "https://placehold.co/600x400.png", hint: "industrial machinery" },
     { src: "https://placehold.co/600x400.png", hint: "storage facility" },
-    { src: "https://placehold.co/600x400.png", hint: "industrial plant exterior" },
+    {
+      src: "https://placehold.co/600x400.png",
+      hint: "industrial plant exterior",
+    },
     { src: "https://placehold.co/600x400.png", hint: "workshop interior" },
-  ]
+  ],
 };
 
-const ProjectGallery = ({ images }: { images: { src: string, hint: string }[] }) => (
+const ProjectGallery = ({
+  images,
+}: {
+  images: { src: string; hint: string }[];
+}) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {images.map((image, index) => (
       <AnimatedSection key={index}>
@@ -63,7 +81,7 @@ export default function ProjectsPage() {
           <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
-              src="https://placehold.co/1770x885.png"
+              src="/leon-rojas-i43gwmENeEo-unsplash.jpg"
               alt="Collection of project images"
               fill
               className="object-cover z-0"
@@ -79,26 +97,32 @@ export default function ProjectsPage() {
             </div>
           </section>
         </AnimatedSection>
-        
+
         <AnimatedSection>
           <section className="w-full py-20 md:py-28 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
               <Tabs defaultValue="residential" className="w-full">
                 <div className="flex justify-center mb-12 md:mb-16">
-                    <TabsList className="bg-secondary p-2 h-auto flex-col sm:flex-row">
-                        <TabsTrigger value="residential" className="px-6 py-2">Residential</TabsTrigger>
-                        <TabsTrigger value="commercial" className="px-6 py-2">Commercial</TabsTrigger>
-                        <TabsTrigger value="industrial" className="px-6 py-2">Industrial</TabsTrigger>
-                    </TabsList>
+                  <TabsList className="bg-secondary p-2 h-auto flex-col sm:flex-row">
+                    <TabsTrigger value="residential" className="px-6 py-2">
+                      Residential
+                    </TabsTrigger>
+                    <TabsTrigger value="commercial" className="px-6 py-2">
+                      Commercial
+                    </TabsTrigger>
+                    <TabsTrigger value="industrial" className="px-6 py-2">
+                      Industrial
+                    </TabsTrigger>
+                  </TabsList>
                 </div>
                 <TabsContent value="residential">
-                    <ProjectGallery images={projects.residential} />
+                  <ProjectGallery images={projects.residential} />
                 </TabsContent>
                 <TabsContent value="commercial">
-                    <ProjectGallery images={projects.commercial} />
+                  <ProjectGallery images={projects.commercial} />
                 </TabsContent>
                 <TabsContent value="industrial">
-                    <ProjectGallery images={projects.industrial} />
+                  <ProjectGallery images={projects.industrial} />
                 </TabsContent>
               </Tabs>
             </div>

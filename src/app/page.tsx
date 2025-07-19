@@ -18,15 +18,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import * as React from "react";
-
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,6 +26,15 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { AnimatedSection } from "@/components/animated-section";
 import AnimatedButton from "@/components/animated-button";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const services = [
   {
@@ -90,7 +91,10 @@ const galleryImages = [
   { src: "/emmanuel-gido-zTs2M5283D4-unsplash.jpg", hint: "painted interior" },
   { src: "/thomas-stephan-lOb0Lg5FCTU-unsplash.jpg", hint: "house exterior" },
   { src: "/rikokill-g9kg-S9MZDs-unsplash.jpg", hint: "commercial building" },
-  { src: "/frames-for-your-heart-vbSRUrNm3Ik-unsplash.jpg", hint: "kitchen cabinets" },
+  {
+    src: "/frames-for-your-heart-vbSRUrNm3Ik-unsplash.jpg",
+    hint: "kitchen cabinets",
+  },
   { src: "/tim-schmidbauer-_tEBCVrEnyo-unsplash.jpg", hint: "bedroom wall" },
   { src: "/ferdinand-asakome-7W6O8y7U30s-unsplash.jpg", hint: "office space" },
 ];
@@ -158,22 +162,59 @@ const processSteps = [
 const partners = [
   { name: "Partner One", logo: "/partners/Corob-Partner-Logo-300x130-1.png" },
   { name: "Partner Two", logo: "/partners/DUlux_Taradelogo_Partnerpage.png" },
-  { name: "Partner Three", logo: "/partners/podsalliance_Master_C4HAG_Black.png" },
+  {
+    name: "Partner Three",
+    logo: "/partners/podsalliance_Master_C4HAG_Black.png",
+  },
   { name: "Partner Four", logo: "/partners/FC-LOGO.png" },
-  { name: "Partner Five", logo: "/partners/PaintersParramatta-Logo-PhotoRoom.png-PhotoRoom.png" },
+  {
+    name: "Partner Five",
+    logo: "/partners/PaintersParramatta-Logo-PhotoRoom.png-PhotoRoom.png",
+  },
   { name: "Partner Six", logo: "/partners/footer-logo-02.png" },
   { name: "Partner Seven", logo: "/partners/Dulux_Australia_Logo.png" },
   { name: "Partner Eight", logo: "/partners/logo_apmf_600w.1560952916718.png" },
 ];
 
 export default function HomePage() {
+  const [api, setApi] = useState<CarouselApi>();
+  const autoplayInterval = useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (api) {
+      stopAutoplay();
+      autoplayInterval.current = setInterval(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0);
+        }
+      }, 3000);
+    }
+  }, [api]);
+
+  const stopAutoplay = useCallback(() => {
+    if (autoplayInterval.current) {
+      clearInterval(autoplayInterval.current);
+      autoplayInterval.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    startAutoplay();
+    return () => stopAutoplay();
+  }, [api, startAutoplay, stopAutoplay]);
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
         <section
           id="hero"
-          className="relative w-full h-[90vh] min-h-[700px] flex items-center"
+          className="relative w-full h-[90vh] min-h-screen flex items-center"
         >
           <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/50 to-black/90 z-10" />
           <Image
@@ -186,16 +227,16 @@ export default function HomePage() {
           />
           <div className="container mx-auto px-4 md:px-6 z-20">
             <AnimatedSection>
-              <div className="max-w-3xl text-left">
+              <div className="max-w-3xl text-left mt-10">
                 <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white font-headline">
                   Excellence in Every Brushstroke
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg md:text-xl text-gray-200">
-                  Aussie Coat delivers premium painting services with
+                  CBR Painters delivers premium painting services with
                   unparalleled quality and craftsmanship for homes and
                   businesses across Australia.
                 </p>
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <div className="mt-20 flex flex-col gap-4 sm:flex-row">
                   <AnimatedButton
                     href="#contact"
                     variant="primary"
@@ -231,7 +272,7 @@ export default function HomePage() {
                   </h2>
                   <div className="w-24 h-1.5 bg-primary"></div>
                   <p className="text-muted-foreground text-lg">
-                    At Aussie Coat, we are defined by a commitment to
+                    At CBR Painters, we are defined by a commitment to
                     excellence. For over a decade, we have been transforming
                     spaces with precision, quality materials, and a passion for
                     our craft. We are not just painters; we are creators of
@@ -311,9 +352,8 @@ export default function HomePage() {
                         className="p-0 mt-4 text-primary h-auto group/link"
                       >
                         <div className="flex flex-row items-center gap-4">
-
-                        Learn More{" "}
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                          Learn More{" "}
+                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
                         </div>
                       </AnimatedButton>
                     </CardContent>
@@ -345,11 +385,11 @@ export default function HomePage() {
                     className="bg-card hover:shadow-xl transition-shadow duration-300 flex flex-col"
                   >
                     <CardHeader>
-                      <CardTitle className="flex items-baseline gap-4">
+                      <CardTitle className="flex flex-row items-start gap-4">
                         <span className="text-4xl font-bold text-primary">
                           {step.number}
                         </span>
-                        <span className="text-2xl font-semibold font-headline">
+                        <span className="text-xl sm:text-2xl font-semibold font-headline break-all">
                           {step.title}
                         </span>
                       </CardTitle>
@@ -419,24 +459,43 @@ export default function HomePage() {
                   projects.
                 </p>
               </div>
-              <div className="group relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent_0,hsl(var(--background))_128px,hsl(var(--background))_calc(100%-128px),transparent_100%)]">
-                <div className="flex w-max animate-scroll group-hover:paused">
-                  {[...partners, ...partners].map((partner, index) => (
-                    <div key={index} className="shrink-0 w-64 px-8">
-                      <div className="grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center p-6">
-                        <Image
-                          src={partner.logo}
-                          alt={partner.name}
-                          width={150}
-                          height={60}
-                          className="object-contain"
-                          data-ai-hint="logo"
-                        />
+
+              <Carousel
+                setApi={setApi}
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-6xl mx-auto"
+                onMouseEnter={stopAutoplay}
+                onMouseLeave={startAutoplay}
+              >
+                <CarouselContent className="-ml-0">
+                  {partners.map((partner, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="pl-0 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
+                    >
+                      <div className="p-1">
+                        <div className="flex-shrink-0 w-full h-24 flex items-center justify-center">
+                          <Image
+                            src={partner.logo}
+                            alt={partner.name}
+                            width={150}
+                            height={60}
+                            className="object-contain max-h-16 grayscale hover:grayscale-0 transition-all duration-300"
+                            data-ai-hint="logo"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </CarouselItem>
                   ))}
+                </CarouselContent>
+                <div className="flex justify-center items-center gap-4 mt-8">
+                  <CarouselPrevious className="static border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black translate-y-0 w-12 h-12 rounded-none" />
+                  <CarouselNext className="static border hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black translate-y-0 w-12 h-12 rounded-none" />
                 </div>
-              </div>
+              </Carousel>
             </div>
           </section>
         </AnimatedSection>
@@ -465,18 +524,18 @@ export default function HomePage() {
                   </h3>
                   <div className="space-y-4 pt-4">
                     <a
-                      href="tel:(02)12345678"
-                      className="flex items-center gap-4 text-lg hover:text-primary transition-colors group"
+                      href="tel:+61 448 411 013"
+                      className="flex items-center gap-4 text-md sm:text-lg hover:text-primary transition-colors group"
                     >
-                      <Phone className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
-                      <span>(02) 1234 5678</span>
+                      <Phone className="h-4 w-4 sm:h-6 sm:w-6 text-primary group-hover:scale-110 transition-transform" />
+                      <span>+61 448 411 013</span>
                     </a>
                     <a
-                      href="mailto:contact@aussiecoat.com.au"
-                      className="flex items-center gap-4 text-lg hover:text-primary transition-colors group"
+                      href="mailto:consult.cbrpainters@gmail.com"
+                      className="flex items-center gap-4 text-md sm:text-lg hover:text-primary transition-colors group break-all"
                     >
-                      <Mail className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
-                      <span>contact@aussiecoat.com.au</span>
+                      <Mail className="min-h-4 min-w-4 sm:h-6 sm:w-6 text-primary group-hover:scale-110 transition-transform" />
+                      <span>consult.cbrpainters@gmail.com</span>
                     </a>
                   </div>
                 </div>
@@ -488,7 +547,7 @@ export default function HomePage() {
                         <Input
                           id="name"
                           placeholder="John Doe"
-                          className="bg-background"
+                          className="bg-background h-auto py-3 "
                         />
                       </div>
                       <div className="space-y-2">
