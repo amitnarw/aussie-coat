@@ -1,8 +1,25 @@
 import Link from "next/link";
 import Logo from "./logo";
-import AnimatedButton from "./animated-button";
 
 export default function Footer() {
+    
+    const navLinks = [
+        { name: "Home", href: "/" },
+        { name: "About Us", href: "/about" },
+        { name: "Services", href: "/#services" },
+        { name: "Projects", href: "/projects" },
+        { name: "Contact", href: "/#contact" },
+    ];
+
+    const serviceLinks = [
+        { name: "Residential Painting", href: "/#services" },
+        { name: "Commercial Painting", href: "/#services" },
+        { name: "Industrial Painting", href: "/#services" },
+        { name: "Strata Painting", href: "/#services" },
+        { name: "Epoxy Flooring", href: "/#services" },
+        { name: "Special Finishes", href: "/#services" },
+    ]
+
     return (
       <footer className="w-full bg-black text-gray-300">
         <div className="container mx-auto px-4 md:px-6 py-12">
@@ -22,11 +39,13 @@ export default function Footer() {
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><AnimatedButton href="/" variant="link-light" className="p-0 h-auto">Home</AnimatedButton></li>
-                        <li><AnimatedButton href="/about" variant="link-light" className="p-0 h-auto">About Us</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Services</AnimatedButton></li>
-                        <li><AnimatedButton href="/projects" variant="link-light" className="p-0 h-auto">Projects</AnimatedButton></li>
-                        <li><AnimatedButton href="/#contact" variant="link-light" className="p-0 h-auto">Contact</AnimatedButton></li>
+                       {navLinks.map((link) => (
+                         <li key={link.name}>
+                           <Link href={link.href} className="transition-colors hover:text-white">
+                               {link.name}
+                           </Link>
+                         </li>
+                       ))}
                     </ul>
                 </div>
 
@@ -34,12 +53,13 @@ export default function Footer() {
                  <div>
                     <h3 className="text-lg font-semibold text-white mb-4 font-headline">Our Services</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Residential Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Commercial Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Industrial Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Strata Painting</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Epoxy Flooring</AnimatedButton></li>
-                        <li><AnimatedButton href="/#services" variant="link-light" className="p-0 h-auto">Special Finishes</AnimatedButton></li>
+                        {serviceLinks.map((link) => (
+                           <li key={link.name}>
+                               <Link href={link.href} className="transition-colors hover:text-white">
+                                   {link.name}
+                               </Link>
+                           </li>
+                        ))}
                     </ul>
                 </div>
 
