@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -32,23 +33,31 @@ export default function Header() {
     };
   }, []);
 
-  const renderNavLinks = (isMobile: boolean = false) => navLinks.map((link) => {
-    const linkClasses = cn(
+  const renderNavLinks = (isMobile: boolean = false) => {
+    return navLinks.map((link) => {
+      const linkClasses = cn(
         "font-medium transition-colors hover:text-primary",
         isMobile ? "text-lg" : "text-sm",
         hasScrolled || isMobile ? "text-foreground" : "text-white"
-    );
+      );
+      
+      const button = (
+        <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, isMobile ? "p-0" : "px-4 py-2")}>
+          {link.name}
+        </AnimatedButton>
+      );
 
-    const Comp = isMobile ? SheetClose : 'div';
-    
-    return (
-       <Comp key={link.name} asChild={isMobile}>
-         <AnimatedButton href={link.href} variant="link" size="default" className={cn(linkClasses, "px-2 py-1 h-auto")}>
-           {link.name}
-         </AnimatedButton>
-      </Comp>
-    )
-  });
+      if (isMobile) {
+        return (
+          <SheetClose key={link.name} asChild>
+            {button}
+          </SheetClose>
+        );
+      }
+      
+      return React.cloneElement(button, { key: link.name });
+    });
+  };
 
 
   return (
@@ -64,7 +73,7 @@ export default function Header() {
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
-            {renderNavLinks()}
+            {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
              <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
@@ -94,9 +103,11 @@ export default function Header() {
                         {renderNavLinks(true)}
                     </nav>
                      <div className="mt-auto p-4 border-t border-border">
-                        <AnimatedButton href="/#contact" variant="primary" className="w-full">
-                          Contact Us
-                        </AnimatedButton>
+                         <SheetClose asChild>
+                            <AnimatedButton href="/#contact" variant="primary" className="w-full">
+                              Contact Us
+                            </AnimatedButton>
+                        </SheetClose>
                     </div>
                 </SheetContent>
             </Sheet>
