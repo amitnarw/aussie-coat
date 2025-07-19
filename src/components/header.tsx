@@ -35,29 +35,31 @@ export default function Header() {
 
   const renderNavLinks = (isMobile: boolean = false) => {
     const linkClasses = cn(
-      "font-medium transition-colors hover:text-primary",
-      isMobile ? "text-lg" : "text-sm",
-      hasScrolled || isMobile ? "text-foreground" : "text-white"
+      "font-medium",
+      isMobile ? "text-lg text-foreground" : "text-sm",
+      !isMobile && (hasScrolled ? "text-foreground" : "text-white")
     );
-
+    
     if (isMobile) {
       return navLinks.map((link) => (
         <SheetClose key={link.name} asChild>
-          <Link href={link.href} className={cn(linkClasses, "p-0")}>
+          <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, "p-0")}>
             {link.name}
-          </Link>
+          </AnimatedButton>
         </SheetClose>
       ));
     }
     
     return navLinks.map((link) => (
-      <Link
+      <AnimatedButton
         key={link.name}
         href={link.href}
-        className={cn(linkClasses, "px-4 py-2 rounded-md")}
+        variant="nav"
+        size="default"
+        className={cn(linkClasses)}
       >
         {link.name}
-      </Link>
+      </AnimatedButton>
     ));
   };
 
@@ -78,9 +80,9 @@ export default function Header() {
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
-            <Button asChild className="hidden sm:inline-flex" size="default" variant="primary">
-                <Link href="/#contact">Contact Us</Link>
-            </Button>
+            <AnimatedButton href="/#contact" variant="primary" size="default" className="hidden sm:inline-flex">
+                Contact Us
+            </AnimatedButton>
             <ThemeToggle hasScrolled={hasScrolled} />
             <Sheet>
                 <SheetTrigger asChild>
