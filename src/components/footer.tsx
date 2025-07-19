@@ -1,16 +1,18 @@
 import Link from "next/link";
 import Logo from "./logo";
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import AnimatedButton from "./animated-button";
+import { Button } from "@/components/ui/button";
 
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode; }) => (
-    <Link href={href} className="text-sm text-gray-400 transition-colors hover:text-white">
-        {children}
-    </Link>
+    <li>
+        <Link href={href} className="text-muted-foreground transition-colors hover:text-primary-foreground">
+            {children}
+        </Link>
+    </li>
 );
 
 const SocialIcon = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="text-gray-400 transition-colors hover:text-white">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary-foreground">
         {children}
     </a>
 )
@@ -46,7 +48,7 @@ export default function Footer() {
                     <p className="text-sm text-muted-foreground max-w-sm">
                        Delivering premium painting services with unparalleled quality and craftsmanship for homes and businesses.
                     </p>
-                    <div className="flex items-center gap-5">
+                    <div className="flex items-center gap-5 pt-2">
                        <SocialIcon href="#"><Facebook className="h-5 w-5" /></SocialIcon>
                        <SocialIcon href="#"><Twitter className="h-5 w-5" /></SocialIcon>
                        <SocialIcon href="#"><Instagram className="h-5 w-5" /></SocialIcon>
@@ -58,11 +60,9 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold text-foreground mb-4 font-headline">Navigation</h3>
                     <ul className="space-y-3">
                        {navLinks.map((link) => (
-                         <li key={link.name}>
-                           <FooterLink href={link.href}>
-                               {link.name}
-                           </FooterLink>
-                         </li>
+                         <FooterLink key={link.name} href={link.href}>
+                             {link.name}
+                         </FooterLink>
                        ))}
                     </ul>
                 </div>
@@ -71,11 +71,9 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold text-foreground mb-4 font-headline">Services</h3>
                     <ul className="space-y-3">
                         {serviceLinks.map((link) => (
-                           <li key={link.name}>
-                               <FooterLink href={link.href}>
-                                   {link.name}
-                               </FooterLink>
-                           </li>
+                           <FooterLink key={link.name} href={link.href}>
+                               {link.name}
+                           </FooterLink>
                         ))}
                     </ul>
                 </div>
@@ -85,9 +83,9 @@ export default function Footer() {
                      <p className="text-sm text-muted-foreground">
                         Get a free, no-obligation estimate from our expert team today.
                     </p>
-                     <AnimatedButton href="/#contact" variant="primary" className="w-full sm:w-auto">
-                        Get a Free Quote
-                      </AnimatedButton>
+                     <Button asChild>
+                        <Link href="/#contact">Get a Free Quote</Link>
+                     </Button>
                 </div>
 
             </div>
