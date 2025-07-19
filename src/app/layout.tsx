@@ -6,8 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700", "800", "900"]
 });
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`font-sans antialiased ${poppins.variable}`}>
+      <body className={`${poppins.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

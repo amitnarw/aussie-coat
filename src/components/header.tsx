@@ -78,7 +78,7 @@ export default function Header() {
             {renderNavLinks(false)}
         </nav>
         <div className="flex items-center gap-4">
-            <AnimatedButton href="/#contact" variant={hasScrolled ? 'primary' : 'secondary'}>
+            <AnimatedButton href="/#contact" variant={hasScrolled ? 'primary' : 'secondary'} className="hidden lg:block">
               Contact Us
             </AnimatedButton>
 
