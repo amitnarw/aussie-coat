@@ -76,7 +76,7 @@ export default function FAQPage() {
         
         <AnimatedSection>
           <section className="w-full py-20 md:py-28 lg:py-32">
-            <div className="container mx-auto px-12 sm:px-8 md:px-12 lg:px-24">
+            <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-24">
               <Accordion type="single" collapsible className="w-full">
                 {faqData.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>

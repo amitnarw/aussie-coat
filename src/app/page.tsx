@@ -148,8 +148,8 @@ export default function HomePage() {
                     Aussie Coat delivers premium painting services with unparalleled quality and craftsmanship for homes and businesses across Australia.
                   </p>
                   <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                    <AnimatedButton href="#contact" variant="primary" size="lg" className="sm:w-auto md:w-[240px]">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5"/></AnimatedButton>
-                    <AnimatedButton href="#services" variant="secondary" size="lg" className="sm:w-auto md:w-[240px]">Our Services</AnimatedButton>
+                    <AnimatedButton href="#contact" variant="primary" size="lg" className="sm:w-auto">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5"/></AnimatedButton>
+                    <AnimatedButton href="#services" variant="secondary" size="lg" className="sm:w-auto">Our Services</AnimatedButton>
                   </div>
                 </div>
               </AnimatedSection>
@@ -159,7 +159,7 @@ export default function HomePage() {
         <AnimatedSection>
             <section id="about" className="w-full py-20 md:py-28 lg:py-32">
               <div className="container mx-auto px-4 md:px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
                   <div className="space-y-6">
                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
                         Trusted Painting Professionals
@@ -323,7 +323,7 @@ export default function HomePage() {
                     Ready to start your next project? Fill out the form below or give us a call to get a free, no-obligation estimate from our expert team.
                   </p>
                 </div>
-                <div className="grid lg:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
                    <div className="space-y-6">
                      <h3 className="text-2xl font-bold font-headline">Contact Details</h3>
                        <div className="space-y-4 pt-4">
