@@ -42,7 +42,7 @@ export default function Header() {
           <NavLink
             href={link.href}
             hasScrolled={true}
-            className="block w-full rounded-md p-3 text-lg font-medium text-foreground transition-colors hover:bg-accent"
+            className="block w-full rounded-md p-3 text-lg font-normal text-foreground transition-colors hover:bg-accent"
           >
             {link.name}
           </NavLink>
