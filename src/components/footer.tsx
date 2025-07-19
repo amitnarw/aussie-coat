@@ -31,8 +31,15 @@ export default function Footer() {
             <nav className="flex items-center justify-center flex-wrap gap-x-4 md:gap-x-6 mb-8">
                 {navLinks.map((link, index) => (
                     <React.Fragment key={link.name}>
-                        <Link href={link.href} className="text-sm uppercase tracking-wider transition-colors hover:text-gray-300">
-                           {link.name}
+                        <Link href={link.href} className="group text-sm uppercase tracking-wider transition-colors hover:text-gray-300">
+                           <span className="relative inline-block h-5 overflow-hidden">
+                                <span className="block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+                                    {link.name}
+                                </span>
+                                <span className="absolute inset-0 block translate-y-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                                    {link.name}
+                                </span>
+                            </span>
                         </Link>
                         {index < navLinks.length - 1 && <div className="h-4 w-px bg-white/50"></div>}
                     </React.Fragment>
