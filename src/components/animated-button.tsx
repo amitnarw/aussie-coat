@@ -36,10 +36,10 @@ interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 export default function AnimatedButton({ href, children, variant, size, className, ...props }: AnimatedButtonProps) {
   const content = (
     <>
-      <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+      <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
         <span className="flex items-center justify-center">{children}</span>
       </span>
-      <span className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+      <span className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
         <span className="flex items-center justify-center">{children}</span>
       </span>
     </>
