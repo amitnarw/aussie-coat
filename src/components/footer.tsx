@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import Logo from "./logo";
 
 const SocialIcon = ({ href, children, 'aria-label': ariaLabel }: { href: string; children: React.ReactNode; 'aria-label': string }) => (
     <a href={href} target="_blank" rel="noopener noreferrer" className="text-white transition-colors hover:text-gray-300" aria-label={ariaLabel}>
@@ -16,6 +15,7 @@ export default function Footer() {
         { name: "Projects", href: "/projects" },
         { name: "Partners", href: "/#partners" },
         { name: "About", href: "/about" },
+        { name: "FAQ", href: "/faq" },
     ];
 
     return (
