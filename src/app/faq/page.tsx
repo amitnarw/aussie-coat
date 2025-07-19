@@ -83,7 +83,7 @@ export default function FAQPage() {
                     <AccordionTrigger className="text-left text-2xl hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground text-base">
+                    <AccordionContent className="text-muted-foreground text-lg">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
