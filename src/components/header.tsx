@@ -44,17 +44,17 @@ export default function Header() {
       if (isMobile) {
         return (
           <SheetClose key={link.name} asChild>
-            <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, "p-0")}>
+            <Link href={link.href} className={cn(linkClasses, "p-0")}>
               {link.name}
-            </AnimatedButton>
+            </Link>
           </SheetClose>
         );
       }
       
       return (
-        <AnimatedButton key={link.name} href={link.href} variant="link" className={cn(linkClasses, "px-3 py-2")}>
+        <Link key={link.name} href={link.href} className={cn(linkClasses, "px-4 py-2")}>
           {link.name}
-        </AnimatedButton>
+        </Link>
       );
     });
   };
