@@ -54,7 +54,7 @@ export default function FAQPage() {
       <Header />
       <main className="flex-1">
         <AnimatedSection>
-          <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
+          <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
             <Image
               src="https://placehold.co/1920x600"
@@ -64,7 +64,7 @@ export default function FAQPage() {
               data-ai-hint="customer service"
             />
             <div className="container mx-auto px-4 md:px-6 z-20 text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white font-headline">
+              <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-white font-headline">
                 Frequently Asked Questions
               </h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
