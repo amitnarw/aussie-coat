@@ -79,7 +79,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="w-full py-20 md:py-28 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                   <Image
                     src="https://placehold.co/600x700"
@@ -108,7 +108,7 @@ export default function AboutPage() {
         <AnimatedSection>
             <section className="w-full py-20 md:py-28 lg:py-32 bg-secondary">
               <div className="container mx-auto px-4 md:px-6">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Mission & Vision</h2>
                         <div className="w-24 h-1.5 bg-primary"></div>
