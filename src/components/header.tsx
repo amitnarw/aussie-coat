@@ -34,22 +34,21 @@ export default function Header() {
   }, []);
 
   const renderNavLinks = (isMobile: boolean = false) => {
-    const linkClasses = cn(
-      "font-medium",
-      isMobile ? "text-lg text-foreground" : "text-sm",
-      !isMobile && (hasScrolled ? "text-foreground" : "text-white")
-    );
-    
     if (isMobile) {
       return navLinks.map((link) => (
         <SheetClose key={link.name} asChild>
-          <AnimatedButton href={link.href} variant="link" className={cn(linkClasses, "p-0")}>
+          <AnimatedButton href={link.href} variant="link" className={cn("text-lg text-foreground p-0")}>
             {link.name}
           </AnimatedButton>
         </SheetClose>
       ));
     }
     
+    const linkClasses = cn(
+      "font-medium text-sm",
+      hasScrolled ? "text-foreground" : "text-white"
+    );
+
     return navLinks.map((link) => (
       <AnimatedButton
         key={link.name}
