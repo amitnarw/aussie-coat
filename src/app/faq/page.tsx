@@ -64,7 +64,7 @@ export default function FAQPage() {
               data-ai-hint="customer service"
             />
             <div className="container mx-auto px-4 md:px-6 z-20 text-center">
-              <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-white font-headline">
+              <h1 className="text-6xl font-extrabold tracking-tight sm:text-7xl md:text-8xl text-white font-headline">
                 Frequently Asked Questions
               </h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
