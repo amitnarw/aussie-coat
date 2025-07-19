@@ -60,7 +60,7 @@ export default function Visualizer() {
 
   return (
     <div className="space-y-8">
-      <Card className="bg-background border-border">
+      <Card className="bg-card border-border">
         <CardContent className="p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -74,7 +74,7 @@ export default function Visualizer() {
                       <Textarea
                         placeholder="e.g., A bright, modern kitchen with white cabinets, a navy blue island, and lots of natural light."
                         rows={4}
-                        className="resize-none bg-secondary border-border focus:bg-background"
+                        className="resize-none bg-background border-border focus:bg-background"
                         {...field}
                       />
                     </FormControl>

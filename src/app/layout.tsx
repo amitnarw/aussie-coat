@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Montserrat } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -21,10 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth dark ${montserrat.variable}`}>
-      <body className="font-body antialiased">
-        {children}
-        <Toaster />
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`font-body antialiased ${montserrat.variable}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
