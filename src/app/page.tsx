@@ -21,6 +21,9 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -103,12 +106,12 @@ const whyChooseUs = [
 ];
 
 const processSteps = [
-    { number: "01", title: "Initial Consultation", description: "We start with a detailed consultation to understand your vision and requirements." },
-    { number: "02", title: "Color & Material Selection", description: "We help you choose the perfect colors and materials for a lasting finish." },
-    { number: "03", title: "Surface Preparation", description: "Thorough preparation is key to a flawless result. We ensure all surfaces are ready for painting." },
-    { number: "04", title: "Professional Painting", description: "Our expert team applies the paint with precision and attention to detail." },
-    { number: "05", title: "Cleaning & Inspection", description: "We clean up the site and conduct a final inspection to ensure our high standards are met." },
-    { number: "06", title: "Project Handover", description: "We walk you through the finished project to guarantee your complete satisfaction." },
+    { number: "01", title: "Consultation", description: "We start with a detailed consultation to understand your vision, requirements, and provide an initial quote." },
+    { number: "02", title: "Planning", description: "We help you choose the perfect colors and materials, and schedule the project at your convenience." },
+    { number: "03", title: "Preparation", description: "Our team meticulously prepares surfaces, protecting your furniture and flooring to ensure a clean process." },
+    { number: "04", title: "Painting", description: "Using premium paints and expert techniques, our painters transform your space with precision and care." },
+    { number: "05", title: "Clean-Up", description: "We ensure the work area is spotless, leaving your property cleaner than we found it." },
+    { number: "06", title: "Final Walk-through", description: "We conduct a final inspection with you to guarantee your complete satisfaction with the finished work." },
 ]
 
 
@@ -214,36 +217,32 @@ export default function HomePage() {
         </AnimatedSection>
         
         <AnimatedSection>
-            <section id="process" className="w-full py-20 md:py-28 lg:py-32">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Process</h2>
-                        <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
-                        <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
-                            We follow a meticulous process to ensure every project is completed to the highest standard, from the initial consultation to the final handover.
-                        </p>
-                    </div>
-                    <div className="relative">
-                        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border rounded-full" aria-hidden="true"></div>
-                        <div className="space-y-12 md:space-y-0">
-                            {processSteps.map((step, index) => (
-                                <div key={step.number} className={`md:grid md:grid-cols-2 md:gap-12 md:items-center`}>
-                                   <div className={`space-y-2 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2 md:text-left'}`}>
-                                        <p className="text-sm font-semibold text-primary uppercase tracking-wider">{`Step ${step.number}`}</p>
-                                        <h3 className="text-2xl font-bold font-headline">{step.title}</h3>
-                                        <p className="text-muted-foreground">{step.description}</p>
-                                   </div>
-                                    <div className={`flex items-center justify-center ${index % 2 === 0 ? 'md:order-2' : ''}`}>
-                                        <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl shadow-lg">
-                                            {step.number.charAt(1)}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <section id="process" className="w-full py-20 md:py-28 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">Our Meticulous Process</h2>
+                <div className="w-24 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
+                <p className="mt-6 max-w-3xl mx-auto text-muted-foreground md:text-lg">
+                  We follow a structured and transparent process to ensure every project is completed to the highest standard, from the initial consultation to the final handover.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {processSteps.map((step) => (
+                  <Card key={step.number} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <CardHeader>
+                      <CardTitle className="flex items-baseline gap-4">
+                        <span className="text-4xl font-bold text-primary">{step.number}</span>
+                        <span className="text-2xl font-semibold font-headline">{step.title}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground">{step.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
         </AnimatedSection>
 
         <AnimatedSection>
